@@ -26,7 +26,6 @@ body{
   max-width:480px;
   margin:auto;
   background:#fff;
-  overflow:hidden;
 }
 
 /* HERO */
@@ -38,14 +37,28 @@ body{
 }
 .hero h1{
   font-family:'Bebas Neue';
-  font-size:54px;
+  font-size:56px;
   letter-spacing:3px;
 }
 .hero p{
   color:var(--ucla-gold);
   font-weight:900;
-  margin-top:12px;
-  line-height:1.4;
+  margin-top:14px;
+}
+
+/* UCLA SEAL */
+.ucla-seal{
+  margin:24px auto 0;
+  width:140px;
+  height:140px;
+  border-radius:50%;
+  border:4px solid var(--ucla-gold);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:900;
+  letter-spacing:1px;
+  background:rgba(255,255,255,0.1);
 }
 
 /* SECTION */
@@ -68,37 +81,53 @@ body{
   border:3px solid var(--ucla-gold);
 }
 
-/* LOGOS */
-.logo-row{
-  display:flex;
-  gap:14px;
-  margin-top:18px;
+/* PRICE */
+.price-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:16px;
 }
-.logo-box{
-  flex:1;
+.price-box{
+  background:#fff;
+  border-radius:16px;
+  padding:18px;
+  text-align:center;
+  box-shadow:0 6px 18px rgba(0,0,0,.12);
+}
+.price{
+  font-size:30px;
+  font-weight:900;
+  color:var(--ucla-blue);
+}
+
+/* ACADEMIC WORDMARKS */
+.wordmarks{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+  margin-top:20px;
+}
+.wordmark{
   background:#fff;
   border-radius:14px;
   padding:16px;
   text-align:center;
   box-shadow:0 6px 18px rgba(0,0,0,.12);
 }
-.logo-box img{
-  height:38px;
+.wordmark .school{
+  font-weight:900;
+  font-size:14px;
+  letter-spacing:.5px;
 }
-.logo-box span{
-  display:block;
-  margin-top:10px;
+.wordmark .detail{
   font-size:12px;
+  margin-top:6px;
   font-weight:700;
 }
 
 /* LIST */
 ul{list-style:none}
 li{padding:8px 0;font-size:15px}
-
-/* QR */
-.qr{text-align:center}
-.qr img{width:160px;margin-top:12px}
 
 /* CTA */
 .cta{
@@ -132,7 +161,7 @@ li{padding:8px 0;font-size:15px}
 }
 
 /* SCROLL */
-.fade{opacity:0;transform:translateY(30px);transition:all .8s ease}
+.fade{opacity:0;transform:translateY(30px);transition:.8s}
 .fade.show{opacity:1;transform:none}
 </style>
 </head>
@@ -142,11 +171,11 @@ li{padding:8px 0;font-size:15px}
 
 <!-- HERO -->
 <div class="hero fade">
-  <h1>UCLA 여름 캠프 2026</h1>
-  <p>
-    🇺🇸 미국 <strong>#1 공립대학교</strong> UCLA<br/>
-    한국 학생 전담 가디언 & 호스트 프로그램
-  </p>
+  <h1>UCLA SUMMER CAMP 2026</h1>
+  <p>🇺🇸 미국 <strong>#1 공립대학교</strong><br/>한국 학생 전담 가디언 프로그램</p>
+  <div class="ucla-seal">
+    UCLA<br/>BRUINS
+  </div>
 </div>
 
 <!-- UCLA VALUE -->
@@ -154,24 +183,30 @@ li{padding:8px 0;font-size:15px}
   <h2>🏆 왜 UCLA인가?</h2>
   <div class="card highlight">
     ✔ U.S. News 선정 <strong>미국 공립대학 1위</strong><br/>
-    ✔ 세계 TOP 수준의 학문·연구 명성<br/>
+    ✔ 세계 최고 수준의 학문·연구 명성<br/>
     ✔ 안전한 캠퍼스 & 글로벌 학생 환경<br/>
-    ✔ 학업·리더십·문화 경험의 완벽한 균형<br/><br/>
-    <strong>“단순한 캠프가 아닌, 세계 최고 수준의 교육 환경 경험”</strong>
+    ✔ 리더십·영어·문화 경험의 완벽한 조합
   </div>
 </div>
 
-<!-- UCLA CAMP -->
+<!-- CAMP PRICE -->
 <div class="section fade">
-  <h2>🎓 UCLA 공식 여름 캠프</h2>
-  <div class="card">
-    UCLA Recreation에서 운영하는 공식 글로벌 캠프<br/><br/>
-    ▸ 대상: 5–15세<br/>
-    ▸ 일정: 2026.06.15 – 08.21<br/>
-    ▸ 운영: 월–금 데이 캠프 (8:30AM–4:30PM)<br/>
-    ▸ 장소: UCLA 캠퍼스 (LA Westwood)<br/><br/>
-    Rec Camp · Voyager · 필드트립 프로그램 운영
+  <h2>💰 UCLA 캠프 참가비 (주당)</h2>
+  <div class="price-grid">
+    <div class="price-box">
+      Rec Camp<br/>
+      <div class="price">$695–$795</div>
+      (5–10세)
+    </div>
+    <div class="price-box">
+      Voyager / 필드트립 포함<br/>
+      <div class="price">$895–$995</div>
+      (11–15세)
+    </div>
   </div>
+  <p style="font-size:13px;margin-top:10px;">
+    ※ UCLA 공식 사이트 직접 결제 · 국제학생 Tier 5 기준
+  </p>
 </div>
 
 <!-- GUARDIAN -->
@@ -180,16 +215,16 @@ li{padding:8px 0;font-size:15px}
   <div class="card highlight">
     ✔ 7년 이상 College Education Professional Consultant<br/>
     ✔ 완벽한 한국어 · 영어 이중언어<br/>
-    ✔ 학업 · 정서 · 문화 적응까지 전인적 케어
+    ✔ 학업·정서·문화 적응까지 전인적 케어
 
-    <div class="logo-row">
-      <div class="logo-box">
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAABACAYAAAB..." alt="Columbia Logo">
-        <span>Columbia University<br/>College of Education Certificate</span>
+    <div class="wordmarks">
+      <div class="wordmark">
+        <div class="school">COLUMBIA UNIVERSITY</div>
+        <div class="detail">College of Education<br/>Certificate</div>
       </div>
-      <div class="logo-box">
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAABACAYAAAB..." alt="UCSD Logo">
-        <span>UC San Diego<br/>College Advising Certified</span>
+      <div class="wordmark">
+        <div class="school">UC SAN DIEGO</div>
+        <div class="detail">College Advising<br/>Certified</div>
       </div>
     </div>
   </div>
@@ -203,21 +238,11 @@ li{padding:8px 0;font-size:15px}
       <li>✈ LAX 공항 픽업 및 출입국 전 과정 관리</li>
       <li>🏫 캠프 등·하원 및 출결 관리</li>
       <li>🕐 24시간 한국어 가디언 상주</li>
-      <li>🏡 UCLA 인근 안전한 숙소 + 3식 제공</li>
+      <li>🏡 UCLA 인근 안전 숙소 + 3식</li>
       <li>📩 부모님 실시간 소통</li>
       <li>🏖 주말 LA 문화 체험</li>
       <li>🚑 응급·의료·보험 즉각 대응</li>
     </ul>
-  </div>
-</div>
-
-<!-- QR -->
-<div class="section fade">
-  <h2>📩 문의 바로가기</h2>
-  <div class="card qr">
-    <strong>jjsrhee0101@gmail.com</strong>
-    <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=mailto:jjsrhee0101@gmail.com">
-    <p style="font-size:13px;margin-top:8px;">QR 스캔 후 이메일 문의</p>
   </div>
 </div>
 
@@ -237,11 +262,7 @@ li{padding:8px 0;font-size:15px}
 
 <script>
 const observer=new IntersectionObserver(entries=>{
-  entries.forEach(entry=>{
-    if(entry.isIntersecting){
-      entry.target.classList.add('show');
-    }
-  });
+  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')})
 });
 document.querySelectorAll('.fade').forEach(el=>observer.observe(el));
 </script>
