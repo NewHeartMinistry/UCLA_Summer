@@ -5,246 +5,231 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>UCLA 여름 캠프 2026 | 한국 학생 전담 가디언 프로그램</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;600;700;800&family=Noto+Sans+KR:wght@400;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans+KR:wght@400;700;900&display=swap" rel="stylesheet">
 
 <style>
-:root {
+:root{
   --ucla-blue:#2774AE;
   --ucla-gold:#FFD100;
-  --dark-blue:#003B5C;
-  --light:#f8fbff;
+  --dark:#003B5C;
+  --light:#f6f9ff;
 }
 
-* { box-sizing:border-box; margin:0; padding:0; }
-
-body {
-  font-family: 'Noto Sans KR','Poppins', sans-serif;
-  background: linear-gradient(135deg,#f3f8ff,#ffffff);
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:'Noto Sans KR',sans-serif;
+  background:#eef3fb;
   color:#222;
 }
 
-.container {
-  max-width: 480px;
-  margin: auto;
-  background: #fff;
-  box-shadow: 0 20px 60px rgba(0,0,0,.15);
-  overflow: hidden;
+.container{
+  max-width:480px;
+  margin:auto;
+  background:#fff;
+  overflow:hidden;
 }
 
-.hero {
-  background: linear-gradient(135deg,var(--ucla-blue),var(--dark-blue));
+/* HERO */
+.hero{
+  background:linear-gradient(135deg,var(--ucla-blue),var(--dark));
   color:#fff;
-  padding: 50px 24px 60px;
+  padding:60px 24px;
   text-align:center;
 }
-
-.hero h1 {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 52px;
-  letter-spacing: 3px;
+.hero h1{
+  font-family:'Bebas Neue';
+  font-size:52px;
+  letter-spacing:3px;
+}
+.hero p{
+  color:var(--ucla-gold);
+  font-weight:900;
+  margin-top:10px;
 }
 
-.hero .sub {
-  color: var(--ucla-gold);
-  font-weight: 900;
-  font-size: 18px;
-  margin-top: 8px;
+/* SECTION */
+.section{
+  padding:42px 24px;
+}
+.section h2{
+  color:var(--ucla-blue);
+  font-size:26px;
+  margin-bottom:18px;
 }
 
-.badges {
-  margin-top:20px;
+.card{
+  background:var(--light);
+  border-radius:18px;
+  padding:20px;
+  margin-bottom:20px;
+}
+.highlight{
+  border:3px solid var(--ucla-gold);
 }
 
-.badge {
-  display:inline-block;
-  background: rgba(255,255,255,.18);
-  padding:8px 14px;
-  border-radius:20px;
-  margin:4px;
-  font-size:14px;
+/* LOGOS */
+.logo-row{
+  display:flex;
+  gap:14px;
+  margin-top:18px;
+}
+.logo-box{
+  flex:1;
+  background:#fff;
+  border-radius:14px;
+  padding:14px;
+  text-align:center;
+  box-shadow:0 6px 18px rgba(0,0,0,.12);
+}
+.logo-box img{
+  max-width:100%;
+  height:36px;
+}
+.logo-box span{
+  display:block;
+  margin-top:8px;
+  font-size:12px;
   font-weight:700;
 }
 
-.section {
-  padding: 40px 24px;
-}
+/* LIST */
+ul{list-style:none}
+li{padding:8px 0;font-size:15px}
 
-.section h2 {
-  font-size: 26px;
-  color: var(--ucla-blue);
-  margin-bottom: 18px;
-}
+/* QR */
+.qr{text-align:center}
+.qr img{width:160px;margin-top:12px}
 
-.card {
-  background: var(--light);
-  border-radius: 18px;
-  padding: 20px;
-  margin-bottom: 20px;
-  box-shadow: 0 10px 30px rgba(0,0,0,.08);
-}
-
-.highlight {
-  border: 3px solid var(--ucla-gold);
-}
-
-.price-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-}
-
-.price {
-  font-size: 32px;
-  font-weight: 900;
-  color: var(--ucla-blue);
-}
-
-ul { list-style: none; }
-li { padding: 10px 0; font-size: 16px; }
-
-.trust-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 14px;
-}
-
-.trust-box {
-  background: #fff;
-  border-radius: 16px;
-  padding: 16px;
-  text-align: center;
-  font-size: 14px;
-  font-weight: 700;
-  box-shadow: 0 8px 20px rgba(0,0,0,.08);
-}
-
-.cta {
-  background: linear-gradient(135deg,var(--dark-blue),var(--ucla-blue));
+/* CTA */
+.cta{
+  background:linear-gradient(135deg,var(--dark),var(--ucla-blue));
   color:#fff;
   text-align:center;
-  padding: 50px 24px;
+  padding:48px 24px;
 }
-
-.cta h3 {
-  color: var(--ucla-gold);
-  font-size: 32px;
-  margin-bottom: 16px;
-  font-weight: 900;
+.cta h3{
+  color:var(--ucla-gold);
+  font-size:30px;
 }
-
-.button {
+.cta a{
   display:inline-block;
   margin-top:20px;
   padding:16px 30px;
-  background: var(--ucla-gold);
+  background:var(--ucla-gold);
   color:#000;
-  font-weight:900;
   text-decoration:none;
+  font-weight:900;
   border-radius:40px;
-  font-size:18px;
 }
 
-.footer {
-  background: var(--dark-blue);
+/* FOOTER */
+.footer{
+  background:var(--dark);
   color:#fff;
   text-align:center;
-  padding:30px 20px;
+  padding:28px;
   font-size:14px;
 }
+
+/* SCROLL */
+.fade{opacity:0;transform:translateY(30px);transition:all .8s ease}
+.fade.show{opacity:1;transform:none}
 </style>
 </head>
 
 <body>
 <div class="container">
 
-  <!-- HERO -->
-  <div class="hero">
-    <h1>UCLA 여름 캠프 2026</h1>
-    <div class="sub">한국 학생 전담 가디언 & 호스트 프로그램</div>
-    <div class="badges">
-      <span class="badge">🌍 세계 1위 공립대</span>
-      <span class="badge">🛡 24시간 한국어 케어</span>
-      <span class="badge">🎓 교육 전문가 동행</span>
-    </div>
-  </div>
+<!-- HERO -->
+<div class="hero fade">
+  <h1>UCLA 여름 캠프 2026</h1>
+  <p>한국 학생 전담 가디언 & 호스트 프로그램</p>
+</div>
 
-  <!-- VALUE -->
-  <div class="section">
-    <div class="card highlight">
-      <strong>영어 몰입 · 스포츠 · LA 문화 체험</strong><br/>
-      단순한 캠프가 아닌,<br/>
-      아이의 성장과 안전을 함께 설계하는 여름
-    </div>
+<!-- UCLA CAMP -->
+<div class="section fade">
+  <h2>🎓 UCLA 공식 여름 캠프</h2>
+  <div class="card highlight">
+    UCLA Recreation에서 운영하는 공식 글로벌 여름 캠프<br/><br/>
+    ✔ 대상: 5–15세<br/>
+    ✔ 일정: 2026.06.15 – 08.21<br/>
+    ✔ 운영: 월–금 데이 캠프 (8:30AM–4:30PM)<br/>
+    ✔ 장소: UCLA 캠퍼스 (LA Westwood)<br/><br/>
+    ▸ Rec Camp · Voyager · 필드트립 프로그램 운영
   </div>
+</div>
 
-  <!-- SCHEDULE -->
-  <div class="section">
-    <h2>📅 캠프 일정</h2>
-    <div class="card">
-      <strong>2026년 6월 15일 – 8월 21일</strong><br/>
-      월–금 데이 캠프 (8:30AM – 4:30PM)<br/><br/>
-      등록 오픈: <strong>2026년 2월 10일 (PST)</strong><br/>
-      ⚠ 인기 주차 조기 마감
-    </div>
-  </div>
+<!-- GUARDIAN -->
+<div class="section fade">
+  <h2>👩‍🏫 가디언 Jean Rhee</h2>
+  <div class="card highlight">
+    ✔ 7년 이상 College Education Professional Consultant<br/>
+    ✔ 완벽한 한국어 · 영어 이중언어<br/>
+    ✔ 학업 · 정서 · 문화 적응까지 전인적 케어
 
-  <!-- PRICE -->
-  <div class="section">
-    <h2>💰 주당 참가비 (국제 학생)</h2>
-    <div class="price-grid">
-      <div class="card">
-        REC CAMP<br/>
-        <div class="price">$695 – $795</div>
-        (5–10세)
+    <div class="logo-row">
+      <div class="logo-box">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/1/1e/Columbia_University_logo.svg" alt="Columbia University Logo">
+        <span>College of Education<br/>Certificate</span>
       </div>
-      <div class="card">
-        VOYAGER / 필드트립 포함<br/>
-        <div class="price">$895 – $995</div>
-        (11–15세)
+      <div class="logo-box">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/UCSD_Seal.svg" alt="UC San Diego Logo">
+        <span>College Advising<br/>Certified</span>
       </div>
     </div>
   </div>
+</div>
 
-  <!-- GUARDIAN -->
-  <div class="section">
-    <h2>👩‍🏫 가디언 Jean Rhee</h2>
-    <div class="card highlight">
-      ✔ 7년 이상 경력 College Education Professional Consultant<br/>
-      ✔ Columbia College of Education 전문 과정 수료 (Certificate)<br/>
-      ✔ UC San Diego College Advising 공식 인증<br/>
-      ✔ Mental Health & Wellness Certified Coach<br/><br/>
-      ✔ 완벽한 한국어 · 영어 이중언어<br/>
-      ✔ 학업 · 정서 · 문화 적응까지 책임지는 전인적 케어
-    </div>
+<!-- GUARDIAN PACKAGE -->
+<div class="section fade">
+  <h2>🏠 Jean Guardian 풀 패키지</h2>
+  <div class="card highlight">
+    <ul>
+      <li>✈ LAX 공항 픽업 및 출입국 관리</li>
+      <li>🏫 캠프 등·하원 및 출결 관리</li>
+      <li>🕐 24시간 한국어 가디언 상주</li>
+      <li>🏡 UCLA 인근 숙소 + 3식 제공</li>
+      <li>📩 부모님 실시간 상황 공유</li>
+      <li>🏖 주말 LA 문화 체험</li>
+      <li>🚑 응급·의료·보험 즉각 대응</li>
+    </ul>
   </div>
+</div>
 
-  <!-- TRUST -->
-  <div class="section">
-    <h2>🔒 부모님이 안심하는 이유</h2>
-    <div class="trust-grid">
-      <div class="trust-box">🎓 교육 전문가 직접 관리</div>
-      <div class="trust-box">🧠 멘탈·정서 케어 가능</div>
-      <div class="trust-box">📩 실시간 부모 소통</div>
-      <div class="trust-box">🛡 응급·위기 대응 시스템</div>
-    </div>
+<!-- QR -->
+<div class="section fade">
+  <h2>📩 문의 바로가기</h2>
+  <div class="card qr">
+    <strong>jjsrhee0101@gmail.com</strong>
+    <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=mailto:jjsrhee0101@gmail.com">
+    <p style="font-size:13px;margin-top:8px;">QR 스캔 후 이메일 문의</p>
   </div>
+</div>
 
-  <!-- CTA -->
-  <div class="cta">
-    <h3>지금 문의하세요</h3>
-    <p>
-      📧 jjsrhee0101@gmail.com<br/>
-      빠른 견적 · 한국 학생 후기 제공
-    </p>
-    <a class="button" href="mailto:jjsrhee0101@gmail.com">이메일 문의하기</a>
-  </div>
+<!-- CTA -->
+<div class="cta fade">
+  <h3>선착순 마감 중</h3>
+  <a href="mailto:jjsrhee0101@gmail.com">이메일 문의하기</a>
+</div>
 
-  <div class="footer">
-    🐻 BRUINS FOREVER<br/>
-    Los Angeles · 한국인 가디언 Jean Rhee<br/>
-    신뢰 · 안전 · 성장
-  </div>
+<div class="footer">
+  🐻 BRUINS FOREVER<br/>
+  Los Angeles · Jean Rhee<br/>
+  신뢰 · 안전 · 성장
+</div>
 
 </div>
+
+<script>
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add('show');
+    }
+  });
+});
+document.querySelectorAll('.fade').forEach(el=>observer.observe(el));
+</script>
+
 </body>
 </html>
