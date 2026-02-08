@@ -7,48 +7,184 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=Bebas+Neue&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
     <style>
         * { margin:0; padding:0; box-sizing:border-box; }
-        :root { --ucla-blue: #2774AE; --ucla-gold: #FFD100; --dark-blue: #003B5C; }
-        body { font-family: 'Noto Sans KR', sans-serif; background: linear-gradient(135deg, #FFF8E7 0%, #f0f8ff 100%); padding: 15px; }
-        .flyer-container { max-width: 900px; margin: 0 auto; background: white; box-shadow: 0 30px 80px rgba(39,116,174,0.25); border-radius: 20px; overflow: hidden; }
-        .header { padding: 80px 40px 50px; text-align: center; color: white; background: linear-gradient(135deg, var(--ucla-blue) 0%, var(--dark-blue) 100%); position: relative; }
-        .header::before { content: '🐻 🐻 🐻'; position: absolute; top: 20px; left: 30px; font-size: 80px; opacity: 0.15; animation: float 4s infinite; }
-        .header::after { content: '🐻 🐻'; position: absolute; top: 30px; right: 40px; font-size: 70px; opacity: 0.15; animation: float 5s infinite; }
-        @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
-        .header h1 { font-size: 90px; letter-spacing: 6px; text-shadow: 6px 6px 0 rgba(0,0,0,0.4); }
-        .subtitle { font-size: 32px; color: var(--ucla-gold); font-weight: 900; }
-        .tagline { font-size: 21px; font-weight: 700; line-height: 1.5; margin-top: 15px; }
-        .cta-section { background: linear-gradient(135deg, var(--dark-blue) 0%, var(--ucla-blue) 100%); color: white; padding: 80px 40px; text-align: center; }
-        .cta-section h3 { font-size: 46px; color: var(--ucla-gold); margin-bottom: 30px; }
-        .contact-big { font-size: 32px; font-weight: 900; background: rgba(255,255,255,0.25); padding: 35px; border-radius: 30px; border: 4px solid var(--ucla-gold); box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
-        .contact-big::before { content: '🐻 '; font-size: 40px; }
-        .footer { background: var(--dark-blue); color: white; padding: 40px; text-align: center; font-size: 18px; }
-        .footer-logo { font-size: 90px; margin-bottom: 10px; }
+        :root {
+            --ucla-blue: #2774AE;
+            --ucla-gold: #FFD100;
+            --dark-blue: #003B5C;
+            --light-blue: #8BB8E8;
+            --cream: #FFF8E7;
+        }
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background: linear-gradient(135deg, var(--cream) 0%, #f0f8ff 100%);
+            padding: 15px;
+            line-height: 1.6;
+        }
+        .flyer-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 30px 80px rgba(39,116,174,0.25);
+            border-radius: 20px;
+            overflow: hidden;
+        }
+        .flyer-container::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; height: 350px;
+            background: linear-gradient(135deg, var(--ucla-blue) 0%, var(--dark-blue) 100%);
+            z-index: 0;
+        }
+        .content-wrapper { position: relative; z-index: 1; }
+
+        .header {
+            padding: 80px 40px 50px;
+            text-align: center;
+            color: white;
+        }
+        .header-logo { font-size: 140px; margin-bottom: -30px; animation: bounce 1.8s infinite; display: block; }
+        @keyframes bounce { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
+        .header h1 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 90px;
+            letter-spacing: 6px;
+            text-shadow: 6px 6px 0 rgba(0,0,0,0.4);
+            margin-bottom: 15px;
+            animation: glow 2.5s infinite alternate;
+        }
+        @keyframes glow {
+            from { text-shadow: 0 0 15px var(--ucla-gold), 0 0 30px var(--ucla-gold); }
+            to { text-shadow: 0 0 40px var(--ucla-gold), 0 0 70px var(--ucla-gold); }
+        }
+        .subtitle { 
+            font-size: 32px; 
+            color: var(--ucla-gold); 
+            font-weight: 900; 
+            margin: 15px 0; 
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.5); 
+            white-space: nowrap; 
+            overflow: hidden; 
+            text-overflow: ellipsis; 
+        }
+        .tagline { 
+            font-size: 20px; 
+            font-weight: 700; 
+            opacity: 0.98; 
+            margin-top: 15px; 
+            line-height: 1.5; 
+            white-space: normal; 
+            word-break: keep-all; 
+        }
+
+        .main-content { padding: 50px; background: white; border-radius: 40px 40px 0 0; margin-top: -100px; position: relative; }
+
+        h2 {
+            font-family: 'Poppins', sans-serif;
+            color: var(--ucla-blue);
+            font-size: 36px;
+            margin: 50px 0 25px;
+            display: flex;
+            align-items: center;
+            gap: 18px;
+        }
+        h2::before {
+            content: '';
+            width: 10px;
+            height: 50px;
+            background: var(--ucla-gold);
+            border-radius: 5px;
+        }
+        .section-icon { font-size: 48px; animation: bounce 2s infinite; }
+
+        .contact-big {
+            font-size: 32px;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--ucla-gold), #ffeb3b);
+            color: var(--dark-blue);
+            padding: 40px;
+            border-radius: 30px;
+            margin: 40px 0;
+            box-shadow: 0 20px 50px rgba(255,209,0,0.5);
+            text-align: center;
+            border: 5px solid var(--dark-blue);
+        }
+        .contact-big strong { font-size: 38px; display: block; margin-bottom: 15px; color: var(--dark-blue); }
+
+        .footer {
+            background: var(--dark-blue);
+            color: white;
+            text-align: center;
+            padding: 50px 40px;
+            font-size: 20px;
+        }
+        .footer-logo { font-size: 140px; margin-bottom: 15px; animation: bounce 2.2s infinite; display: block; }
+
+        /* Keep other styles (activities, compare, etc.) from previous – abbreviated here for brevity */
+        .activities-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; margin: 30px 0; }
+        .activity-card { background: white; border: 3px solid var(--light-blue); border-radius: 16px; padding: 25px; box-shadow: 0 8px 20px rgba(39,116,174,0.15); transition: all 0.3s ease; }
+        .activity-card:hover { border-color: var(--ucla-gold); transform: translateY(-8px); box-shadow: 0 15px 35px rgba(39,116,174,0.25); }
+        .activity-card h4 { color: var(--ucla-blue); font-size: 22px; margin-bottom: 12px; font-weight: 800; }
+
+        .compare-box { overflow-x: auto; border-radius: 20px; box-shadow: 0 15px 40px rgba(39,116,174,0.3); background: white; border: 3px solid var(--ucla-gold); }
+        .compare-table { width: 100%; border-collapse: separate; border-spacing: 0; font-size: 17px; }
+        .compare-table th, .compare-table td { padding: 16px 18px; text-align: left; border-bottom: 1px solid #e0e0e0; }
+        .compare-table th { background: linear-gradient(135deg, var(--ucla-blue) 0%, var(--dark-blue) 100%); color: white; font-weight: 900; font-size: 18px; }
+
+        .price-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 30px; margin: 40px 0; }
+        .price-card { background: white; border: 5px solid var(--ucla-blue); border-radius: 24px; padding: 35px 25px; text-align: center; transition: all 0.4s ease; box-shadow: 0 10px 25px rgba(39,116,174,0.2); }
+        .price-card:hover { transform: translateY(-20px) scale(1.08); box-shadow: 0 25px 50px rgba(39,116,174,0.35); border-color: var(--ucla-gold); }
+        .price-amount { font-family: 'Bebas Neue', sans-serif; font-size: 60px; color: var(--ucla-blue); margin: 15px 0; }
+
+        .features-list li { padding: 16px 0 16px 50px; font-size: 17px; position: relative; }
+        .features-list li::before { content: '★'; position: absolute; left: 12px; color: var(--ucla-gold); font-size: 28px; }
+
+        .cta-section { background: linear-gradient(135deg, var(--dark-blue) 0%, var(--ucla-blue) 70%); color: white; padding: 80px 40px; text-align: center; }
+        .cta-section h3 { font-size: 48px; color: var(--ucla-gold); margin-bottom: 30px; text-shadow: 3px 3px 15px rgba(0,0,0,0.5); white-space: nowrap; }
+
+        @media (max-width: 768px) {
+            .header-logo { font-size: 100px; }
+            .header h1 { font-size: 60px; }
+            .subtitle { font-size: 28px; }
+            .contact-big { font-size: 26px; padding: 30px; }
+            .footer-logo { font-size: 100px; }
+        }
     </style>
 </head>
 <body>
     <div class="flyer-container">
-        <div class="header">
-            <h1>UCLA 여름 캠프 2026</h1>
-            <div class="subtitle">한국 학생 전담 가디언과 함께하는 최고의 브루인 여름!</div>
-            <p class="tagline">세계 1위 공립대 UCLA 캠퍼스에서 영어 몰입 + 스포츠 + LA 모험!<br>24시간 안전 케어 + 최고의 추억 + 부모님 완벽 안심!</p>
-        </div>
-
-        <div class="main-content" style="padding:50px;">
-            <!-- 기존 일정, 가격, 비교, 활동, 가디언 섹션 그대로 유지 (생략) -->
-
-            <div class="cta-section">
-                <h3>지금 문의하세요! 자리 급합니다!</h3>
-                <div class="contact-big">
-                    📧 jjsrhee0101@gmail.com<br>
-                    <span style="font-size:24px;">빠른 견적 · 한국 학생 실제 후기 즉시 보내드려요!</span>
-                </div>
-                <p>공식 UCLA Recreation<br>recreation.ucla.edu/summercamps<br>youthcamps@recreation.ucla.edu | +1 (310) 206-4000</p>
+        <div class="content-wrapper">
+            <div class="header">
+                <div class="header-logo">🐻🐻🐻</div>
+                <h1>UCLA 여름 캠프 2026</h1>
+                <div class="subtitle">한국 학생 전담 가디언과 함께하는 최고의 브루인 여름!</div>
+                <p class="tagline">
+                    세계 1위 공립대 UCLA 캠퍼스에서 영어 몰입 + 스포츠 + LA 모험!<br>
+                    24시간 안전 케어 + 최고의 추억 + 부모님 완벽 안심!
+                </p>
             </div>
-        </div>
 
-        <div class="footer">
-            <div class="footer-logo">🐻 🐻 🐻 BRUINS FOREVER! 🐻 🐻 🐻</div>
-            <p>Los Angeles Westwood | 한국인 호스트 Jean 드림</p>
+            <div class="main-content">
+                <!-- 일정, 가격, 비교, 활동, 가디언 섹션은 이전 버전과 동일하게 유지 (생략) -->
+
+                <div class="cta-section">
+                    <h3>지금 문의하세요! 자리 급합니다!</h3>
+                    <div class="contact-big">
+                        <strong>Jean 호스트 연락처</strong>
+                        📧 jjsrhee0101@gmail.com<br>
+                        빠른 견적 & 실제 한국 학생 후기 바로 보내드려요!<br>
+                        (카톡/전화 문의도 환영 – 이메일로 먼저 연락 주세요)
+                    </div>
+                    <p>공식 UCLA Recreation 정보<br>
+                    recreation.ucla.edu/summercamps<br>
+                    youthcamps@recreation.ucla.edu | +1 (310) 206-4000</p>
+                </div>
+            </div>
+
+            <div class="footer">
+                <div class="footer-logo">🐻 BRUINS FOREVER! 🐻🐻</div>
+                <p>Los Angeles Westwood | 한국인 호스트 Jean 드림<br>
+                안전 · 즐거움 · 성장의 완벽한 UCLA 여름! 🐻</p>
+            </div>
         </div>
     </div>
 </body>
