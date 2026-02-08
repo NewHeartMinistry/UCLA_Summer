@@ -88,12 +88,21 @@
             font-size: 18px;
         }
 
-        /* 업그레이드된 비교 테이블 스타일 */
-        .compare-section {
-            margin: 40px 0;
+        /* 텍스트 정렬 개선: 한국어 단어 끊김 방지 */
+        p, li, td, th {
+            word-break: keep-all;
+            hyphens: none;
+            white-space: normal;
+            overflow-wrap: break-word;
         }
+        li, td {
+            line-height: 1.7;
+        }
+
+        /* 비교 테이블 스타일 (기존 striking 유지) */
+        .compare-section { margin: 40px 0; }
         .compare-box {
-            overflow-x: auto; /* 모바일 스크롤 가능 */
+            overflow-x: auto;
             border-radius: 20px;
             box-shadow: 0 15px 40px rgba(39,116,174,0.3);
             background: white;
@@ -117,26 +126,19 @@
             font-weight: 900;
             font-size: 19px;
             text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
-            position: sticky;
-            top: 0;
-            z-index: 1;
         }
-        .compare-table tr:nth-child(even) {
-            background: rgba(39,116,174,0.05);
-        }
+        .compare-table tr:nth-child(even) { background: rgba(39,116,174,0.05); }
         .compare-table tr:hover {
             background: rgba(255,209,0,0.2) !important;
             transform: translateY(-4px);
             box-shadow: 0 10px 20px rgba(255,209,0,0.3);
             transition: all 0.3s ease;
         }
-        .compare-table td strong {
-            color: var(--ucla-gold);
-        }
+        .compare-table td strong { color: var(--ucla-gold); }
         .ucla-win { color: var(--ucla-gold); font-weight: bold; }
         .stanford-neutral { color: #555; }
 
-        .price-grid { /* 기존 가격 그리드 유지 */ 
+        .price-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
             gap: 30px;
@@ -163,11 +165,12 @@
             margin: 15px 0;
         }
 
-        .features-list li { /* 기존 유지 */ 
+        .features-list li {
             padding: 18px 0 18px 60px;
             font-size: 18px;
             border-bottom: 1px dashed #ccc;
             position: relative;
+            white-space: normal; /* 자연 줄바꿈 허용 */
         }
         .features-list li::before {
             content: '★';
@@ -300,11 +303,14 @@
                 <ul class="features-list">
                     <li>LAX 공항 픽업 & UCLA 안전 이동 지원</li>
                     <li>24시간 한국어 상담 + 부모님 실시간 보고 (이메일/메시지)</li>
-                    <li>UCLA 인근 기숙사 스타일 숙소 + 3식 (한식 옵션 가능)</li>
+                    <li><strong>숙소 선택 가능:</strong> UCLA 캠퍼스 근처 숙소 조정 (off-campus supervised) 또는 제가 호스트하는 풀 기숙사 스타일 숙소 (추가 요금 적용, 안전·3식 포함)</li>
                     <li>주말 LA 투어: 산타모니카 비치, 할리우드, 베벌리힐스, 코리아타운 등</li>
                     <li>캠프 매일 체크인/동행 + 영어·문화 적응 도움</li>
                     <li>응급·의료 지원 + 여행 보험 조율</li>
                 </ul>
+                <div class="highlight-box" style="margin-top:20px; font-size:17px;">
+                    <strong>참고:</strong> UCLA Recreation 공식 프로그램은 데이 캠프만 제공하며, 청소년(미성년자) 대상 온캠퍼스 기숙사는 별도 없음 (17세 이상 Summer Sessions 대상). 따라서 제가 안전한 근처 숙소나 호스트 옵션을 직접 관리합니다.
+                </div>
 
                 <h2><span class="section-icon">🏆</span> 특별 경험 하이라이트</h2>
                 <div class="highlight-box">
