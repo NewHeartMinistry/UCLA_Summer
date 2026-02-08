@@ -1,281 +1,251 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UCLA 여름 캠프 2026 - 한국 학생 전문 가디언 & 호스트 (Stanford 비교 포함)</title>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=Bebas+Neue&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
-    <style>
-        * { margin:0; padding:0; box-sizing:border-box; }
-        :root {
-            --ucla-blue: #2774AE;
-            --ucla-gold: #FFD100;
-            --dark-blue: #003B5C;
-            --light-blue: #8BB8E8;
-            --cream: #FFF8E7;
-            --accent-red: #FF4D4D;
-        }
-        body {
-            font-family: 'Noto Sans KR', sans-serif;
-            background: linear-gradient(135deg, var(--cream) 0%, #f0f8ff 100%);
-            padding: 15px;
-            line-height: 1.6;
-        }
-        .flyer-container {
-            max-width: 900px;
-            margin: 0 auto;
-            background: white;
-            box-shadow: 0 30px 80px rgba(39,116,174,0.25);
-            border-radius: 20px;
-            overflow: hidden;
-            position: relative;
-        }
-        .flyer-container::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; height: 350px;
-            background: linear-gradient(135deg, var(--ucla-blue) 0%, var(--dark-blue) 100%);
-            z-index: 0;
-        }
-        .content-wrapper { position: relative; z-index: 1; }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>UCLA Summer Camp 2026 | Korean Student Guardian Program</title>
 
-        .header {
-            padding: 80px 40px 50px;
-            text-align: center;
-            color: white;
-        }
-        .header h1 {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 90px;
-            letter-spacing: 6px;
-            text-shadow: 6px 6px 0 rgba(0,0,0,0.4);
-            margin-bottom: 15px;
-            animation: glow 2.5s infinite alternate;
-        }
-        @keyframes glow {
-            from { text-shadow: 0 0 15px var(--ucla-gold), 0 0 30px var(--ucla-gold); }
-            to { text-shadow: 0 0 40px var(--ucla-gold), 0 0 70px var(--ucla-gold); }
-        }
-        .subtitle {
-            font-size: 36px;
-            color: var(--ucla-gold);
-            font-weight: 900;
-            margin: 15px 0;
-            text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
-        }
-        .tagline { font-size: 22px; font-weight: 700; opacity: 0.98; margin-top: 10px; }
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;600;700;800&family=Noto+Sans+KR:wght@400;700;900&display=swap" rel="stylesheet">
 
-        .main-content { padding: 50px; background: white; border-radius: 40px 40px 0 0; margin-top: -100px; position: relative; }
+<style>
+:root {
+  --ucla-blue:#2774AE;
+  --ucla-gold:#FFD100;
+  --dark-blue:#003B5C;
+  --light:#f8fbff;
+}
 
-        h2 {
-            font-family: 'Poppins', sans-serif;
-            color: var(--ucla-blue);
-            font-size: 36px;
-            margin: 50px 0 25px;
-            display: flex;
-            align-items: center;
-            gap: 18px;
-        }
-        h2::before {
-            content: '';
-            width: 10px;
-            height: 50px;
-            background: var(--ucla-gold);
-            border-radius: 5px;
-        }
-        .section-icon { font-size: 48px; animation: bounce 2s infinite; }
-        @keyframes bounce { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
+* { box-sizing:border-box; margin:0; padding:0; }
 
-        .highlight-box, .compare-box {
-            background: linear-gradient(135deg, #fff9e6 0%, #fffef8 100%);
-            border: 4px solid var(--ucla-gold);
-            border-radius: 20px;
-            padding: 30px;
-            margin: 25px 0;
-            box-shadow: 0 15px 40px rgba(255,209,0,0.25);
-            font-size: 18px;
-        }
-        .compare-box table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
-        }
-        .compare-box th, .compare-box td {
-            border: 1px solid #ddd;
-            padding: 12px;
-            text-align: left;
-        }
-        .compare-box th {
-            background: var(--ucla-blue);
-            color: white;
-        }
-        .compare-box tr:nth-child(even) { background: #f9f9f9; }
+body {
+  font-family: 'Poppins','Noto Sans KR', sans-serif;
+  background: linear-gradient(135deg,#f3f8ff,#ffffff);
+  color:#222;
+}
 
-        .price-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 30px;
-            margin: 40px 0;
-        }
-        .price-card {
-            background: white;
-            border: 5px solid var(--ucla-blue);
-            border-radius: 24px;
-            padding: 35px 25px;
-            text-align: center;
-            transition: all 0.4s ease;
-            box-shadow: 0 10px 25px rgba(39,116,174,0.2);
-        }
-        .price-card:hover {
-            transform: translateY(-20px) scale(1.08);
-            box-shadow: 0 25px 50px rgba(39,116,174,0.35);
-            border-color: var(--ucla-gold);
-        }
-        .price-amount {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 60px;
-            color: var(--ucla-blue);
-            margin: 15px 0;
-        }
+.container {
+  max-width: 480px;
+  margin: auto;
+  background: #fff;
+  box-shadow: 0 20px 60px rgba(0,0,0,.15);
+  overflow: hidden;
+}
 
-        .features-list li {
-            padding: 18px 0 18px 60px;
-            font-size: 18px;
-            border-bottom: 1px dashed #ccc;
-            position: relative;
-        }
-        .features-list li::before {
-            content: '★';
-            position: absolute;
-            left: 15px;
-            color: var(--ucla-gold);
-            font-size: 32px;
-        }
+/* HERO */
+.hero {
+  background: linear-gradient(135deg,var(--ucla-blue),var(--dark-blue));
+  color:#fff;
+  padding: 50px 24px 60px;
+  text-align:center;
+}
 
-        .cta-section {
-            background: linear-gradient(135deg, var(--dark-blue) 0%, var(--ucla-blue) 70%, #1a5c9e 100%);
-            color: white;
-            padding: 70px 40px;
-            text-align: center;
-        }
-        .cta-section h3 {
-            font-size: 48px;
-            color: var(--ucla-gold);
-            margin-bottom: 25px;
-            text-shadow: 3px 3px 15px rgba(0,0,0,0.5);
-        }
-        .contact-big {
-            font-size: 26px;
-            font-weight: 800;
-            background: rgba(255,255,255,0.2);
-            padding: 30px;
-            border-radius: 25px;
-            backdrop-filter: blur(12px);
-            margin: 30px 0;
-            border: 2px solid var(--ucla-gold);
-        }
+.hero h1 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 54px;
+  letter-spacing: 3px;
+  margin-bottom: 10px;
+}
 
-        .footer {
-            background: var(--dark-blue);
-            color: white;
-            text-align: center;
-            padding: 40px;
-            font-size: 18px;
-        }
-        .footer-logo { font-size: 80px; margin-bottom: 15px; }
+.hero .sub {
+  color: var(--ucla-gold);
+  font-weight: 800;
+  font-size: 18px;
+}
 
-        @media (max-width: 768px) {
-            .header h1 { font-size: 60px; }
-            .subtitle { font-size: 28px; }
-            h2 { font-size: 30px; }
-            .price-amount { font-size: 48px; }
-            .compare-box table { font-size: 14px; }
-        }
-    </style>
+.badges {
+  margin-top:20px;
+}
+
+.badge {
+  display:inline-block;
+  background: rgba(255,255,255,.15);
+  padding:8px 14px;
+  border-radius:20px;
+  margin:4px;
+  font-size:14px;
+}
+
+/* SECTION */
+.section {
+  padding: 40px 24px;
+}
+
+.section h2 {
+  font-size: 26px;
+  color: var(--ucla-blue);
+  margin-bottom: 18px;
+}
+
+.card {
+  background: var(--light);
+  border-radius: 18px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.08);
+}
+
+.highlight {
+  border: 3px solid var(--ucla-gold);
+}
+
+/* PRICE */
+.price-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.price {
+  font-size: 34px;
+  font-weight: 800;
+  color: var(--ucla-blue);
+}
+
+/* LIST */
+ul {
+  list-style: none;
+}
+
+li {
+  padding: 10px 0;
+  font-size: 16px;
+}
+
+/* CTA */
+.cta {
+  background: linear-gradient(135deg,var(--dark-blue),var(--ucla-blue));
+  color:#fff;
+  text-align:center;
+  padding: 50px 24px;
+}
+
+.cta h3 {
+  color: var(--ucla-gold);
+  font-size: 32px;
+  margin-bottom: 16px;
+}
+
+.button {
+  display:inline-block;
+  margin-top:20px;
+  padding:16px 28px;
+  background: var(--ucla-gold);
+  color:#000;
+  font-weight:800;
+  text-decoration:none;
+  border-radius:40px;
+  font-size:18px;
+}
+
+/* FOOTER */
+.footer {
+  background: var(--dark-blue);
+  color:#fff;
+  text-align:center;
+  padding:30px 20px;
+  font-size:14px;
+}
+</style>
 </head>
+
 <body>
-    <div class="flyer-container">
-        <div class="content-wrapper">
-            <div class="header">
-                <h1>UCLA 여름 캠프 2026</h1>
-                <div class="subtitle">한국 학생 전담 가디언 & 호스트와 함께하는 최고의 브루인 여름!</div>
+<div class="container">
 
-                
-                <p class="tagline">세계 1위 공립대 UCLA 캠퍼스에서 영어 몰입 + 스포츠 + LA 모험!<br>24시간 안전 케어 + 최고의 추억 + 부모님 완벽 안심!</p>
-            </div>
-
-            <div class="main-content">
-                <h2><span class="section-icon">📅</span> 2026 공식 일정 (6/15 ~ 8/21)</h2>
-                <div class="highlight-box">
-                    <strong>등록 오픈:</strong> 2026년 2월 10일 정오 (PST) – 선착순 마감!<br>
-                    <strong>인기 주차 추천:</strong> Week 4 (7/6~10), Week 5 (7/13~17), Week 7 (7/27~31) 등<br>
-                    월~금 데이 캠프 (8:30AM ~ 4:30PM) | 자세한 그리드는 공식 사이트 PDF 다운로드
-                </div>
-
-                <h2><span class="section-icon">💰</span> UCLA 공식 참가비 (Tier 5: 국제 학생)</h2>
-                <div class="price-grid">
-                    <div class="price-card">
-                        <div>Rec Camp 등 일반 프로그램</div>
-                        <div class="price-amount">$695 ~ $795</div>
-                        <div>주당 (기본)</div>
-                    </div>
-                    <div class="price-card">
-                        <div>Voyager / Discover / Bruins on Water 등</div>
-                        <div class="price-amount">$895 ~ $995</div>
-                        <div>주당 (필드트립 포함)</div>
-                    </div>
-                </div>
-                <p style="text-align:center; color:#555; font-size:16px;">공식 사이트 직접 결제 | 등록비 별도 | Tier 5 기준 (국제 학생 적용)</p>
-
-                <h2><span class="section-icon">🆚</span> UCLA vs Stanford 여름 캠프 비교 (한국 학생 관점)</h2>
-                <div class="compare-box">
-                    <table>
-                        <tr><th>항목</th><th>UCLA (제가 호스트)</th><th>Stanford (Camp Cardinal 등)</th></tr>
-                        <tr><td>위치 & 매력</td><td>LA – 디즈니랜드·유니버설·비치·할리우드 관광 최고!</td><td>실리콘밸리 – 테크/STEM 강점, 조용한 캠퍼스</td></tr>
-                        <tr><td>운영 기간</td><td>6/15 ~ 8/21 (10주)</td><td>6월 초 ~ 8월 말 (약 10주)</td></tr>
-                        <tr><td>가격 (주당 추정)</td><td>$695 ~ $995 (Tier 5 국제)</td><td>$500 ~ $800 (Camp Cardinal), Athletic 별도</td></tr>
-                        <tr><td>주요 활동</td><td>스포츠·예술·필드트립 (디즈니/유니버설 테마 주)</td><td>All-Sports·특정 스포츠 (축구·테니스·골프 등 NCAA 수준)</td></tr>
-                        <tr><td>기숙/국제 지원</td><td>데이 중심 + 제가 풀 숙소·24시간 한국어 케어 제공</td><td>데이 중심 (일부 overnight 서드파티), 국제 지원 제한적</td></tr>
-                        <tr><td>한국 학생 추천 포인트</td><td>LA 재미 + 영어 몰입 + 제 가디언 풀 서비스 → 부모님 최고 안심!</td><td>스포츠/테크 특화 시 강함, 하지만 관광·케어는 UCLA 우위</td></tr>
-                    </table>
-                    <p><strong>결론:</strong> 재미·관광·안전 케어 원하시면 UCLA 강추! Stanford는 특정 스포츠/STEM 관심 시 고려하세요.</p>
-                </div>
-
-                <h2><span class="section-icon">🛡️</span> Jean 가디언 풀 패키지 (한국 학생 특화)</h2>
-                <ul class="features-list">
-                    <li>LAX 공항 픽업 & UCLA 안전 이동 지원</li>
-                    <li>24시간 한국어 상담 + 부모님 실시간 보고 (이메일/메시지)</li>
-                    <li>UCLA 인근 기숙사 스타일 숙소 + 3식 (한식 옵션 가능)</li>
-                    <li>주말 LA 투어: 산타모니카 비치, 할리우드, 베벌리힐스, 코리아타운 등</li>
-                    <li>캠프 매일 체크인/동행 + 영어·문화 적응 도움</li>
-                    <li>응급·의료 지원 + 여행 보험 조율</li>
-                </ul>
-
-                <h2><span class="section-icon">🏆</span> 특별 경험 하이라이트</h2>
-                <div class="highlight-box">
-                    <strong>★ Voyager (11~15세):</strong> 암벽등반, 세일링, 수상 스포츠 + 프리미엄 필드트립<br>
-                    <strong>★ Rec Camp (5~10세):</strong> 수영·예술·팀 스포츠로 신나는 하루!<br>
-                    <strong>★ 추가 매력:</strong> 글로벌 친구들 사귀기 + LA 명소 탐방 + 자연 영어 습득
-                </div>
-
-                <div class="cta-section">
-                    <h3>지금 문의하세요! 자리 선점 급합니다!</h3>
-                    <div class="contact-big">
-                        이메일: jjsrhee0101@gmail.com<br>
-                        빠른 견적 & 한국 학생 후기 제공 (과거 참가자 사례 공유)
-                    </div>
-                    <p>공식 UCLA Recreation 정보<br>
-                    recreation.ucla.edu/summercamps<br>
-                    youthcamps@recreation.ucla.edu | +1 (310) 206-4000</p>
-                </div>
-            </div>
-
-            <div class="footer">
-                <div class="footer-logo">🐻 BRUINS FOREVER!</div>
-                <p>Los Angeles Westwood | 한국인 호스트 Jean 드림<br>안전 · 즐거움 · 성장의 완벽한 UCLA 여름을 함께!</p>
-            </div>
-        </div>
+  <!-- HERO -->
+  <div class="hero">
+    <h1>UCLA SUMMER CAMP 2026</h1>
+    <div class="sub">Korean Student Guardian & Host Program</div>
+    <div class="badges">
+      <span class="badge">🌍 #1 Public University</span>
+      <span class="badge">🛡 24/7 Korean Care</span>
+      <span class="badge">🏖 LA Experience</span>
     </div>
+  </div>
+
+  <!-- VALUE -->
+  <div class="section">
+    <div class="card highlight">
+      <strong>English Immersion · Sports · Culture</strong><br/>
+      A once-in-a-lifetime summer at UCLA<br/>
+      Parents安心 · Students 성장
+    </div>
+  </div>
+
+  <!-- SCHEDULE -->
+  <div class="section">
+    <h2>📅 Schedule</h2>
+    <div class="card">
+      <strong>June 15 – August 21, 2026</strong><br/>
+      Mon–Fri Day Camp (8:30AM–4:30PM)<br/><br/>
+      Registration Opens:<br/>
+      <strong>Feb 10, 2026 (PST)</strong><br/>
+      ⚠ Popular weeks fill fast
+    </div>
+  </div>
+
+  <!-- PRICE -->
+  <div class="section">
+    <h2>💰 Weekly Tuition</h2>
+    <div class="price-grid">
+      <div class="card">
+        REC CAMP<br/>
+        <div class="price">$695–795</div>
+        Ages 5–10
+      </div>
+      <div class="card">
+        VOYAGER / FIELD TRIP<br/>
+        <div class="price">$895–995</div>
+        Ages 11–15
+      </div>
+    </div>
+    <p style="margin-top:10px;font-size:14px;color:#555;">
+      Tier 5 International · Paid directly to UCLA
+    </p>
+  </div>
+
+  <!-- GUARDIAN -->
+  <div class="section">
+    <h2>🏠 Jean Guardian Package</h2>
+    <div class="card highlight">
+      <ul>
+        <li>✈ LAX Airport Pickup</li>
+        <li>🕐 24/7 Korean Guardian</li>
+        <li>🏡 UCLA-area Housing + 3 Meals</li>
+        <li>📩 Real-time Parent Updates</li>
+        <li>🏖 Weekend LA Tours</li>
+        <li>🚑 Medical & Emergency Support</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- PROGRAMS -->
+  <div class="section">
+    <h2>🏆 Popular Programs</h2>
+    <div class="card">
+      <strong>Voyager (11–15)</strong><br/>
+      Rock climbing · Sailing · Water sports<br/><br/>
+      <strong>Rec Camp (5–10)</strong><br/>
+      Swimming · Arts · Team Sports
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta">
+    <h3>Contact Now – Limited Spots</h3>
+    <p>
+      📧 jjsrhee0101@gmail.com<br/>
+      Fast Quotes · Korean Student Reviews
+    </p>
+    <a class="button" href="mailto:jjsrhee0101@gmail.com">EMAIL NOW</a>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    🐻 BRUINS FOREVER<br/>
+    Los Angeles · Korean Host Jean<br/>
+    Safe · Fun · Transformative Summer
+  </div>
+
+</div>
 </body>
 </html>
-
