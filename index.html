@@ -31,7 +31,6 @@ body {
   overflow: hidden;
 }
 
-/* HERO */
 .hero {
   background: linear-gradient(135deg,var(--ucla-blue),var(--dark-blue));
   color:#fff;
@@ -43,13 +42,13 @@ body {
   font-family: 'Bebas Neue', sans-serif;
   font-size: 52px;
   letter-spacing: 3px;
-  margin-bottom: 10px;
 }
 
 .hero .sub {
   color: var(--ucla-gold);
   font-weight: 900;
   font-size: 18px;
+  margin-top: 8px;
 }
 
 .badges {
@@ -58,14 +57,14 @@ body {
 
 .badge {
   display:inline-block;
-  background: rgba(255,255,255,.15);
+  background: rgba(255,255,255,.18);
   padding:8px 14px;
   border-radius:20px;
   margin:4px;
   font-size:14px;
+  font-weight:700;
 }
 
-/* SECTION */
 .section {
   padding: 40px 24px;
 }
@@ -88,7 +87,6 @@ body {
   border: 3px solid var(--ucla-gold);
 }
 
-/* PRICE */
 .price-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -101,17 +99,25 @@ body {
   color: var(--ucla-blue);
 }
 
-/* LIST */
-ul {
-  list-style: none;
+ul { list-style: none; }
+li { padding: 10px 0; font-size: 16px; }
+
+.trust-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
 }
 
-li {
-  padding: 10px 0;
-  font-size: 16px;
+.trust-box {
+  background: #fff;
+  border-radius: 16px;
+  padding: 16px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 700;
+  box-shadow: 0 8px 20px rgba(0,0,0,.08);
 }
 
-/* CTA */
 .cta {
   background: linear-gradient(135deg,var(--dark-blue),var(--ucla-blue));
   color:#fff;
@@ -138,7 +144,6 @@ li {
   font-size:18px;
 }
 
-/* FOOTER */
 .footer {
   background: var(--dark-blue);
   color:#fff;
@@ -159,16 +164,16 @@ li {
     <div class="badges">
       <span class="badge">🌍 세계 1위 공립대</span>
       <span class="badge">🛡 24시간 한국어 케어</span>
-      <span class="badge">🏖 LA 문화 체험</span>
+      <span class="badge">🎓 교육 전문가 동행</span>
     </div>
   </div>
 
   <!-- VALUE -->
   <div class="section">
     <div class="card highlight">
-      <strong>영어 몰입 · 스포츠 · 문화 체험</strong><br/>
-      UCLA에서 보내는 단 한 번의 특별한 여름<br/>
-      부모님은 안심, 아이는 성장
+      <strong>영어 몰입 · 스포츠 · LA 문화 체험</strong><br/>
+      단순한 캠프가 아닌,<br/>
+      아이의 성장과 안전을 함께 설계하는 여름
     </div>
   </div>
 
@@ -177,9 +182,8 @@ li {
     <h2>📅 캠프 일정</h2>
     <div class="card">
       <strong>2026년 6월 15일 – 8월 21일</strong><br/>
-      월–금 데이 캠프 (오전 8:30 – 오후 4:30)<br/><br/>
-      등록 오픈:<br/>
-      <strong>2026년 2월 10일 (PST)</strong><br/>
+      월–금 데이 캠프 (8:30AM – 4:30PM)<br/><br/>
+      등록 오픈: <strong>2026년 2월 10일 (PST)</strong><br/>
       ⚠ 인기 주차 조기 마감
     </div>
   </div>
@@ -199,52 +203,35 @@ li {
         (11–15세)
       </div>
     </div>
-    <p style="margin-top:10px;font-size:14px;color:#555;">
-      공식 UCLA 사이트 직접 결제 · 국제 학생 Tier 5 기준
-    </p>
   </div>
 
-  <!-- GUARDIAN INTRO -->
+  <!-- GUARDIAN -->
   <div class="section">
-    <h2>👩‍🏫 가디언 Jean Rhee 소개</h2>
+    <h2>👩‍🏫 가디언 Jean Rhee</h2>
     <div class="card highlight">
-      <strong>Jean Rhee | College Education Professional Consultant</strong><br/><br/>
-
-      ✔ <strong>7년 이상 경력</strong>의 대학·교육 전문 컨설턴트<br/>
-      ✔ <strong>Columbia University College of Education</strong><br/>
-      &nbsp;&nbsp;&nbsp;전문 과정 수료 (Certificate)<br/>
-      ✔ <strong>UC San Diego (UCSD)</strong><br/>
-      &nbsp;&nbsp;&nbsp;College Advising 공식 인증<br/>
-      ✔ <strong>Mental Health & Wellness</strong><br/>
-      &nbsp;&nbsp;&nbsp;공인 코치 자격 보유<br/><br/>
-
-      ✔ <strong>완벽한 한국어 · 영어 이중언어</strong><br/>
-      ✔ 학업 · 정서 · 문화 적응까지<br/>
-      &nbsp;&nbsp;&nbsp;아이 한 명 한 명을 책임지는 밀착 케어<br/><br/>
-
-      <strong>“단순한 캠프 인솔이 아닌,<br/>
-      아이의 성장과 안전을 함께 책임지는 가디언입니다.”</strong>
+      ✔ 7년 이상 경력 College Education Professional Consultant<br/>
+      ✔ Columbia College of Education 전문 과정 수료 (Certificate)<br/>
+      ✔ UC San Diego College Advising 공식 인증<br/>
+      ✔ Mental Health & Wellness Certified Coach<br/><br/>
+      ✔ 완벽한 한국어 · 영어 이중언어<br/>
+      ✔ 학업 · 정서 · 문화 적응까지 책임지는 전인적 케어
     </div>
   </div>
 
-  <!-- GUARDIAN PACKAGE -->
+  <!-- TRUST -->
   <div class="section">
-    <h2>🏠 Jean 가디언 풀 패키지</h2>
-    <div class="card highlight">
-      <ul>
-        <li>✈ LAX 공항 픽업 & 안전 이동</li>
-        <li>🕐 24시간 한국어 가디언 케어</li>
-        <li>🏡 UCLA 인근 숙소 + 3식 제공</li>
-        <li>📩 부모님 실시간 소통</li>
-        <li>🏖 주말 LA 투어</li>
-        <li>🚑 응급·의료·보험 지원</li>
-      </ul>
+    <h2>🔒 부모님이 안심하는 이유</h2>
+    <div class="trust-grid">
+      <div class="trust-box">🎓 교육 전문가 직접 관리</div>
+      <div class="trust-box">🧠 멘탈·정서 케어 가능</div>
+      <div class="trust-box">📩 실시간 부모 소통</div>
+      <div class="trust-box">🛡 응급·위기 대응 시스템</div>
     </div>
   </div>
 
   <!-- CTA -->
   <div class="cta">
-    <h3>지금 문의하세요 (선착순 마감)</h3>
+    <h3>지금 문의하세요</h3>
     <p>
       📧 jjsrhee0101@gmail.com<br/>
       빠른 견적 · 한국 학생 후기 제공
@@ -252,15 +239,12 @@ li {
     <a class="button" href="mailto:jjsrhee0101@gmail.com">이메일 문의하기</a>
   </div>
 
-  <!-- FOOTER -->
   <div class="footer">
     🐻 BRUINS FOREVER<br/>
     Los Angeles · 한국인 가디언 Jean Rhee<br/>
-    안전 · 신뢰 · 성장의 여름
+    신뢰 · 안전 · 성장
   </div>
 
 </div>
 </body>
 </html>
-
-
