@@ -31,48 +31,49 @@
             content: '';
             position: absolute;
             inset: 0 0 auto 0;
-            height: 300px;
+            height: 320px;
             background: linear-gradient(135deg, var(--ucla-blue) 0%, var(--dark-blue) 100%);
             z-index: 0;
         }
         .content-wrapper { position: relative; z-index: 1; }
 
         .header {
-            padding: 60px 20px 40px;
+            padding: 70px 20px 50px;
             text-align: center;
             color: white;
         }
-        .header-logo { font-size: 100px; margin-bottom: -20px; animation: bounce 2s infinite; }
-        @keyframes bounce { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
+        .header-logo { font-size: 120px; margin-bottom: -25px; animation: bounce 2s infinite; }
+        @keyframes bounce { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-18px); } }
         .header h1 {
             font-family: 'Bebas Neue', sans-serif;
             font-size: clamp(48px, 12vw, 80px);
-            letter-spacing: 4px;
-            text-shadow: 4px 4px 0 rgba(0,0,0,0.4);
+            letter-spacing: 5px;
+            text-shadow: 5px 5px 0 rgba(0,0,0,0.4);
             margin-bottom: 12px;
         }
         .subtitle {
-            font-size: clamp(22px, 6vw, 32px);
+            font-size: clamp(24px, 6.5vw, 34px);
             color: var(--ucla-gold);
             font-weight: 900;
-            margin: 10px 0;
-            text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+            margin: 12px 0;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
         }
         .tagline {
-            font-size: clamp(16px, 4.5vw, 20px);
+            font-size: clamp(18px, 5vw, 22px);
             font-weight: 700;
-            line-height: 1.5;
+            line-height: 1.6;
+            margin-top: 15px;
             white-space: normal;
             word-break: keep-all;
-            padding: 0 10px;
+            hyphens: none;
+            padding: 0 15px;
         }
 
         .main-content {
-            padding: 30px 16px 40px;
+            padding: 30px 16px;
             background: white;
             border-radius: 32px 32px 0 0;
-            margin-top: -80px;
-            position: relative;
+            margin-top: -90px;
         }
 
         h2 {
@@ -81,7 +82,7 @@
             margin: 40px 0 20px;
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 14px;
             flex-wrap: wrap;
         }
         h2::before {
@@ -120,7 +121,7 @@
 
         .price-amount { font-size: clamp(40px, 12vw, 58px); }
 
-        .compare-box { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+        .compare-box { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 20px 0; }
         .compare-table {
             min-width: 100%;
             font-size: 15px;
@@ -132,10 +133,14 @@
         .features-list li {
             font-size: 16px;
             padding: 14px 0 14px 44px;
+            position: relative;
         }
         .features-list li::before {
-            font-size: 24px;
+            content: '★';
+            position: absolute;
             left: 8px;
+            color: var(--ucla-gold);
+            font-size: 24px;
         }
 
         .cta-section {
@@ -158,17 +163,17 @@
         .footer {
             padding: 40px 20px;
             font-size: 16px;
+            text-align: center;
         }
         .footer-logo { font-size: 90px; margin-bottom: 12px; }
 
         @media (max-width: 600px) {
             .header { padding: 50px 16px 30px; }
-            .main-content { padding: 24px 12px 40px; margin-top: -60px; }
+            .main-content { padding: 24px 12px; margin-top: -60px; }
             .price-grid, .activities-grid { grid-template-columns: 1fr; }
             .compare-table th, .compare-table td { font-size: 13.5px; padding: 10px 12px; }
             h2 { font-size: 28px; flex-direction: column; align-items: flex-start; }
-            .section-icon { font-size: 40px; }
-            .contact-big { padding: 25px 16px; }
+            .tagline { font-size: 18px; }
         }
     </style>
 </head>
@@ -176,7 +181,7 @@
     <div class="flyer-container">
         <div class="content-wrapper">
             <div class="header">
-                <div class="header-logo">🐻🐻</div>
+                <div class="header-logo">🐻🐻🐻</div>
                 <h1>UCLA 여름 캠프 2026</h1>
                 <div class="subtitle">한국 학생 전담 가디언과 함께하는 브루인 여름!</div>
                 <p class="tagline">
@@ -186,79 +191,98 @@
             </div>
 
             <div class="main-content">
-                <!-- Schedule -->
                 <h2><span class="section-icon">📅</span> 2026 공식 일정</h2>
                 <div class="highlight-box">
-                    <strong>운영:</strong> 2026년 6월 15일 ~ 8월 21일 (월~금)<br>
-                    <strong>등록 오픈:</strong> 2026년 2월 10일 정오 (PST)<br>
-                    <strong>시간:</strong> 8:30 AM ~ 4:30 PM (데이 캠프)
+                    <strong>운영 기간:</strong> 2026년 6월 15일 ~ 8월 21일 (월~금, 데이 캠프)<br>
+                    <strong>등록 오픈:</strong> 2026년 2월 10일 정오 (PST) – 선착순 마감!<br>
+                    <strong>시간:</strong> 8:30 AM ~ 4:30 PM
                 </div>
 
-                <!-- Pricing -->
-                <h2><span class="section-icon">💰</span> 참가비 (Tier 5 국제 학생)</h2>
+                <h2><span class="section-icon">💰</span> 참가비 (Tier 5: 국제 학생)</h2>
                 <div class="price-grid">
                     <div class="price-card">
-                        <div>Rec Camp 등 일반</div>
+                        <div>Rec Camp 등 일반 프로그램</div>
                         <div class="price-amount">$695 ~ $795</div>
                         <div>주당</div>
                     </div>
                     <div class="price-card">
-                        <div>Voyager / Discover 등</div>
+                        <div>Voyager / Discover 등 특화</div>
                         <div class="price-amount">$895 ~ $995</div>
                         <div>주당 (필드트립 포함)</div>
                     </div>
                 </div>
 
-                <!-- Comparison -->
-                <h2><span class="section-icon">🆚</span> UCLA vs Stanford 비교</h2>
+                <h2><span class="section-icon">🆚</span> UCLA vs Stanford 비교 (한국 학생 관점)</h2>
                 <div class="compare-box">
                     <table class="compare-table">
-                        <tr><th>항목</th><th>UCLA</th><th>Stanford</th></tr>
-                        <tr><td>위치 매력</td><td>LA 관광 최고!</td><td>실리콘밸리 테크 중심</td></tr>
-                        <tr><td>가격 (주당)</td><td>$695~995</td><td>$500~800대</td></tr>
-                        <tr><td>케어</td><td>24시간 한국어 풀 지원</td><td>데이 중심</td></tr>
-                        <tr><td>추천</td><td>재미·안전·영어</td><td>스포츠/STEM 특화 시</td></tr>
+                        <tr><th>항목</th><th>UCLA (제가 호스트 🐻)</th><th>Stanford (🅲)</th></tr>
+                        <tr><td>위치 & 매력</td><td class="ucla-win">LA – 디즈니랜드·유니버설·비치 관광 최고!</td><td>실리콘밸리 – 테크/STEM 강점</td></tr>
+                        <tr><td>운영 기간</td><td>6/15 ~ 8/21 (10주)</td><td>6월 초 ~ 8월 말</td></tr>
+                        <tr><td>가격 (주당 추정)</td><td>$695 ~ $995</td><td>$500 ~ $800대</td></tr>
+                        <tr><td>기숙/국제 지원</td><td class="ucla-win">데이 중심 + 제가 풀 숙소·24시간 한국어 케어 제공</td><td>데이 중심 (일부 서드파티 overnight), 제한적</td></tr>
+                        <tr><td>추천 포인트</td><td class="ucla-win">LA 재미 + 안전 케어 + 영어 몰입</td><td>특정 스포츠/테크 관심 시</td></tr>
                     </table>
                 </div>
 
-                <!-- Activities -->
-                <h2><span class="section-icon">🎯</span> 주요 활동</h2>
+                <h2><span class="section-icon">🎯</span> UCLA 캠프 상세 활동</h2>
                 <div class="activities-grid">
                     <div class="activity-card">
                         <h4>Rec Camp (5~10세)</h4>
-                        <ul><li>미술·공예</li><li>팀 게임·스포츠</li><li>수영·과학 놀이</li></ul>
+                        <ul>
+                            <li>미술 & 공예 활동</li>
+                            <li>비경쟁 스포츠 & 팀 게임</li>
+                            <li>과학 기반 놀이 & 실험</li>
+                            <li>레크리에이션 수영</li>
+                        </ul>
+                    </div>
+                    <div class="activity-card">
+                        <h4>Discover (8~10세)</h4>
+                        <ul>
+                            <li>수영 & 챌린지 코스</li>
+                            <li>암벽 등반 & 필드 게임</li>
+                            <li>미술 & 주간 필드트립</li>
+                        </ul>
+                    </div>
+                    <div class="activity-card">
+                        <h4>Bruins on Water (7~10세)</h4>
+                        <ul>
+                            <li>세일링·카약·패들보드 기초</li>
+                            <li>바다 과학 실험 & 아트</li>
+                        </ul>
                     </div>
                     <div class="activity-card">
                         <h4>Voyager (11~15세)</h4>
-                        <ul><li>암벽 등반</li><li>세일링·카약</li><li>주 2회 필드트립</li></ul>
+                        <ul>
+                            <li>암벽 등반 & 수영</li>
+                            <li>Marina 수상 스포츠 (2회)</li>
+                            <li>주 2회 필드트립 (LA 명소)</li>
+                        </ul>
                     </div>
-                    <!-- more cards if needed -->
                 </div>
 
-                <!-- Guardian -->
-                <h2><span class="section-icon">🛡️</span> Jean 가디언 서비스</h2>
+                <h2><span class="section-icon">🛡️</span> Jean 가디언 풀 패키지</h2>
                 <ul class="features-list">
-                    <li>LAX 픽업 & 이동</li>
-                    <li>24시간 한국어 지원</li>
-                    <li>숙소 선택 (UCLA 근처 or 풀 호스트)</li>
-                    <li>주말 LA 투어</li>
-                    <li>캠프 동행·체크인</li>
+                    <li>LAX 공항 픽업 & 안전 이동</li>
+                    <li>24시간 한국어 상담 + 부모님 보고</li>
+                    <li>숙소 선택: UCLA 근처 or 제가 호스트 (추가 요금)</li>
+                    <li>주말 LA 투어 (산타모니카·할리우드 등)</li>
+                    <li>캠프 매일 체크인 + 영어 적응 도움</li>
                 </ul>
 
-                <!-- CTA -->
                 <div class="cta-section">
-                    <h3>지금 문의하세요!</h3>
+                    <h3>지금 문의하세요! 자리 급합니다!</h3>
                     <div class="contact-big">
-                        <strong>Jean 호스트</strong>
-                        jjsrhee0101@gmail.com<br>
-                        빠른 답변 & 견적 드립니다
+                        <strong>Jean 호스트 연락처</strong>
+                        📧 jjsrhee0101@gmail.com<br>
+                        빠른 견적 & 한국 학생 후기 제공
                     </div>
+                    <p>공식 사이트: recreation.ucla.edu/summercamps</p>
                 </div>
             </div>
 
             <div class="footer">
-                <div class="footer-logo">🐻</div>
-                <p>UCLA 브루인과 함께하는 특별한 여름!</p>
+                <div class="footer-logo">🐻 BRUINS FOREVER! 🐻</div>
+                <p>Los Angeles | 한국인 호스트 Jean 드림</p>
             </div>
         </div>
     </div>
