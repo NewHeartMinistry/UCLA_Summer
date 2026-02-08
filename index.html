@@ -13,81 +13,68 @@
             --dark-blue: #003B5C;
             --light-blue: #8BB8E8;
             --cream: #FFF8E7;
+            --accent-red: #FF4D4D;
         }
         body {
             font-family: 'Noto Sans KR', sans-serif;
             background: linear-gradient(135deg, var(--cream) 0%, #f0f8ff 100%);
+            padding: 15px;
             line-height: 1.6;
         }
         .flyer-container {
-            max-width: 920px;
+            max-width: 900px;
             margin: 0 auto;
             background: white;
-            box-shadow: 0 15px 40px rgba(39,116,174,0.25);
+            box-shadow: 0 30px 80px rgba(39,116,174,0.25);
             border-radius: 20px;
             overflow: hidden;
-        }
-        .header {
             position: relative;
-            height: 380px;
-            background: url('https://recreation.ucla.edu/sites/default/files/styles/resize_3_2/public/2022-03/MAC_card_programs.jpg?itok=3dNodATy') center/cover no-repeat;
-            color: white;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            padding: 0 20px;
         }
-        .header::after {
+        .flyer-container::before {
             content: '';
             position: absolute;
-            inset: 0;
-            background: linear-gradient(to bottom, rgba(39,116,174,0.75), rgba(0,59,92,0.85));
+            top: 0; left: 0; right: 0; height: 350px;
+            background: linear-gradient(135deg, var(--ucla-blue) 0%, var(--dark-blue) 100%);
+            z-index: 0;
         }
-        .header-content {
-            position: relative;
-            z-index: 2;
+        .content-wrapper { position: relative; z-index: 1; }
+
+        .header {
+            padding: 80px 40px 50px;
+            text-align: center;
+            color: white;
         }
-        .header-logo { font-size: 140px; margin-bottom: -30px; animation: bounce 2s infinite; }
-        @keyframes bounce { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
         .header h1 {
             font-family: 'Bebas Neue', sans-serif;
-            font-size: clamp(50px, 13vw, 90px);
+            font-size: 90px;
             letter-spacing: 6px;
-            text-shadow: 6px 6px 0 rgba(0,0,0,0.5);
-            margin: 0;
+            text-shadow: 6px 6px 0 rgba(0,0,0,0.4);
+            margin-bottom: 15px;
+            animation: glow 2.5s infinite alternate;
+        }
+        @keyframes glow {
+            from { text-shadow: 0 0 15px var(--ucla-gold), 0 0 30px var(--ucla-gold); }
+            to { text-shadow: 0 0 40px var(--ucla-gold), 0 0 70px var(--ucla-gold); }
         }
         .subtitle {
-            font-size: clamp(24px, 6vw, 36px);
+            font-size: 36px;
             color: var(--ucla-gold);
             font-weight: 900;
             margin: 15px 0;
-            text-shadow: 3px 3px 12px rgba(0,0,0,0.6);
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
         }
-        .tagline {
-            font-size: clamp(18px, 5vw, 22px);
-            font-weight: 700;
-            line-height: 1.6;
-            max-width: 90%;
-            margin: 20px auto 0;
-            white-space: normal;
-            word-break: keep-all;
-        }
+        .tagline { font-size: 22px; font-weight: 700; opacity: 0.98; margin-top: 10px; }
 
-        .main-content {
-            padding: 40px 20px;
-            background: white;
-        }
+        .main-content { padding: 50px; background: white; border-radius: 40px 40px 0 0; margin-top: -100px; position: relative; }
 
         h2 {
-            font-size: clamp(28px, 8vw, 36px);
+            font-family: 'Poppins', sans-serif;
             color: var(--ucla-blue);
+            font-size: 36px;
             margin: 50px 0 25px;
             display: flex;
             align-items: center;
-            gap: 15px;
-            text-align: center;
-            justify-content: center;
+            gap: 18px;
         }
         h2::before {
             content: '';
@@ -96,94 +83,97 @@
             background: var(--ucla-gold);
             border-radius: 5px;
         }
+        .section-icon { font-size: 48px; animation: bounce 2s infinite; }
+        @keyframes bounce { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
 
-        .activities-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-            margin: 30px 0;
-        }
-        .activity-card {
-            background: white;
+        .highlight-box {
+            background: linear-gradient(135deg, #fff9e6 0%, #fffef8 100%);
+            border: 4px solid var(--ucla-gold);
             border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(39,116,174,0.15);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            padding: 30px;
+            margin: 25px 0;
+            box-shadow: 0 15px 40px rgba(255,209,0,0.25);
+            font-size: 18px;
+        }
+
+        .price-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+        .price-card {
+            background: white;
+            border: 5px solid var(--ucla-blue);
+            border-radius: 24px;
+            padding: 35px 25px;
             text-align: center;
+            transition: all 0.4s ease;
+            box-shadow: 0 10px 25px rgba(39,116,174,0.2);
         }
-        .activity-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 50px rgba(255,209,0,0.3);
+        .price-card:hover {
+            transform: translateY(-20px) scale(1.08);
+            box-shadow: 0 25px 50px rgba(39,116,174,0.35);
+            border-color: var(--ucla-gold);
         }
-        .activity-card img {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-            border-bottom: 4px solid var(--ucla-gold);
-        }
-        .activity-card h4 {
-            font-size: 22px;
+        .price-amount {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 60px;
             color: var(--ucla-blue);
-            margin: 15px 0 10px;
-            padding: 0 15px;
+            margin: 15px 0;
         }
-        .activity-card ul {
-            list-style: none;
-            padding: 0 15px 20px;
-            text-align: left;
-            font-size: 15px;
-        }
-        .activity-card li {
-            margin: 8px 0;
-            padding-left: 25px;
+
+        .features-list li {
+            padding: 18px 0 18px 60px;
+            font-size: 18px;
+            border-bottom: 1px dashed #ccc;
             position: relative;
         }
-        .activity-card li::before {
-            content: '⚡';
+        .features-list li::before {
+            content: '★';
             position: absolute;
-            left: 0;
+            left: 15px;
             color: var(--ucla-gold);
+            font-size: 32px;
         }
 
         .cta-section {
-            background: linear-gradient(135deg, var(--dark-blue), var(--ucla-blue));
+            background: linear-gradient(135deg, var(--dark-blue) 0%, var(--ucla-blue) 70%, #1a5c9e 100%);
             color: white;
-            padding: 60px 20px;
+            padding: 70px 40px;
             text-align: center;
         }
         .cta-section h3 {
-            font-size: clamp(36px, 10vw, 50px);
+            font-size: 48px;
             color: var(--ucla-gold);
             margin-bottom: 25px;
             text-shadow: 3px 3px 15px rgba(0,0,0,0.5);
         }
         .contact-big {
-            background: var(--ucla-gold);
-            color: var(--dark-blue);
-            font-size: clamp(24px, 7vw, 32px);
-            font-weight: 900;
-            padding: 35px 20px;
+            font-size: 26px;
+            font-weight: 800;
+            background: rgba(255,255,255,0.2);
+            padding: 30px;
             border-radius: 25px;
-            margin: 30px auto;
-            max-width: 90%;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+            backdrop-filter: blur(12px);
+            margin: 30px 0;
+            border: 2px solid var(--ucla-gold);
         }
 
         .footer {
             background: var(--dark-blue);
             color: white;
             text-align: center;
-            padding: 50px 20px;
+            padding: 40px;
             font-size: 18px;
         }
-        .footer-logo { font-size: 120px; margin-bottom: 15px; animation: bounce 2.2s infinite; }
+        .footer-logo { font-size: 80px; margin-bottom: 15px; }
 
-        @media (max-width: 600px) {
-            .header { height: 280px; padding: 50px 15px 30px; }
-            .header-logo { font-size: 90px; }
-            .main-content { padding: 25px 12px; margin-top: -60px; }
-            .activities-grid { grid-template-columns: 1fr; }
-            .activity-card img { height: 160px; }
+        @media (max-width: 768px) {
+            .header h1 { font-size: 60px; }
+            .subtitle { font-size: 28px; }
+            h2 { font-size: 30px; }
+            .price-amount { font-size: 48px; }
         }
     </style>
 </head>
@@ -191,67 +181,66 @@
     <div class="flyer-container">
         <div class="content-wrapper">
             <div class="header">
-                <div class="header-logo">🐻🐻</div>
                 <h1>UCLA 여름 캠프 2026</h1>
-                <div class="subtitle">한국 학생 전담 가디언과 함께하는 브루인 여름!</div>
-                <p class="tagline">
-                    세계 1위 공립대 UCLA 캠퍼스에서 영어 몰입 + 스포츠 + LA 모험!<br>
-                    24시간 안전 케어 + 최고의 추억 + 부모님 완벽 안심!
-                </p>
+                <div class="subtitle">한국 학생 전담 가디언 & 호스트와 함께하는 최고의 브루인 여름!</div>
+                <p class="tagline">세계 1위 공립대 UCLA 캠퍼스에서 영어 몰입 + 스포츠 + LA 모험!<br>24시간 안전 케어 + 최고의 추억 + 부모님 완벽 안심!</p>
             </div>
 
             <div class="main-content">
-                <h2><span class="section-icon">🎯</span> UCLA 캠프 하이라이트 활동</h2>
-                <div class="activities-grid">
-                    <div class="activity-card">
-                        <img src="https://staticg.sportskeeda.com/editor/2023/09/e921c-16954646827102.png" alt="UCLA Bruin Bear Mascot">
-                        <h4>Rec Camp (5~10세)</h4>
-                        <ul>
-                            <li>미술·공예·창의 프로젝트</li>
-                            <li>팀 게임·비경쟁 스포츠</li>
-                            <li>놀이 수영·과학 실험</li>
-                        </ul>
+                <h2><span class="section-icon">📅</span> 2026 공식 일정 (6/15 ~ 8/21)</h2>
+                <div class="highlight-box">
+                    <strong>등록 오픈:</strong> 2026년 2월 10일 정오 (PST) – 선착순 마감!<br>
+                    <strong>인기 주차 추천:</strong> Week 4 (7/6~10), Week 5 (7/13~17), Week 7 (7/27~31) 등<br>
+                    월~금 데이 캠프 (8:30AM ~ 4:30PM) | 자세한 그리드는 공식 사이트 PDF 다운로드
+                </div>
+
+                <h2><span class="section-icon">💰</span> 공식 참가비 (Tier 5: 국제 학생)</h2>
+                <div class="price-grid">
+                    <div class="price-card">
+                        <div>Rec Camp 등 일반 프로그램</div>
+                        <div class="price-amount">$695 ~ $795</div>
+                        <div>주당 (기본)</div>
                     </div>
-                    <div class="activity-card">
-                        <img src="https://recreation.ucla.edu/sites/default/files/styles/resize_3_2/public/2022-03/MAC_card_programs.jpg?itok=3dNodATy" alt="Marina Aquatic Center Kayaking">
-                        <h4>Bruins on Water (7~10세)</h4>
-                        <ul>
-                            <li>세일링·카약·패들보드</li>
-                            <li>바다 과학 & 아트 활동</li>
-                        </ul>
+                    <div class="price-card">
+                        <div>Voyager / Discover / Bruins on Water 등</div>
+                        <div class="price-amount">$895 ~ $995</div>
+                        <div>주당 (필드트립 포함)</div>
                     </div>
-                    <div class="activity-card">
-                        <img src="https://s3.amazonaws.com/cms.ipressroom.com/173/files/20234/20230507_UCLAMag_217-resize.jpg" alt="UCLA Rowing/Water Activity">
-                        <h4>Voyager (11~15세)</h4>
-                        <ul>
-                            <li>암벽 등반·수영</li>
-                            <li>Marina 수상 스포츠</li>
-                            <li>주 2회 LA 필드트립</li>
-                        </ul>
-                    </div>
-                    <div class="activity-card">
-                        <img src="https://www.readyforboardingblog.com/wp-content/uploads/2024/08/universal-studios-hollywood-los-angeles-04-202407-readyforboarding_pl.jpg" alt="Universal Studios Field Trip">
-                        <h4>특별 필드트립</h4>
-                        <ul>
-                            <li>디즈니랜드·유니버설 스튜디오</li>
-                            <li>할리우드·산타모니카 비치</li>
-                        </ul>
-                    </div>
+                </div>
+                <p style="text-align:center; color:#555; font-size:16px;">공식 사이트 직접 결제 | 등록비 별도 | Tier 5 기준 (국제 학생 적용)</p>
+
+                <h2><span class="section-icon">🛡️</span> Jean 가디언 풀 패키지 (한국 학생 특화)</h2>
+                <ul class="features-list">
+                    <li>LAX 공항 픽업 & UCLA 안전 이동 지원</li>
+                    <li>24시간 한국어 상담 + 부모님 실시간 보고 (이메일/메시지)</li>
+                    <li>UCLA 인근 기숙사 스타일 숙소 + 3식 (한식 옵션 가능)</li>
+                    <li>주말 LA 투어: 산타모니카 비치, 할리우드, 베벌리힐스, 코리아타운 등</li>
+                    <li>캠프 매일 체크인/동행 + 영어·문화 적응 도움</li>
+                    <li>응급·의료 지원 + 여행 보험 조율</li>
+                </ul>
+
+                <h2><span class="section-icon">🏆</span> 특별 경험 하이라이트</h2>
+                <div class="highlight-box">
+                    <strong>★ Voyager (11~15세):</strong> 암벽등반, 세일링, 수상 스포츠 + 프리미엄 필드트립<br>
+                    <strong>★ Rec Camp (5~10세):</strong> 수영·예술·팀 스포츠로 신나는 하루!<br>
+                    <strong>★ 추가 매력:</strong> 글로벌 친구들 사귀기 + LA 명소 탐방 + 자연 영어 습득
                 </div>
 
                 <div class="cta-section">
-                    <h3>지금 문의하세요! 자리 급합니다!</h3>
+                    <h3>지금 문의하세요! 자리 선점 급합니다!</h3>
                     <div class="contact-big">
-                        <strong>Jean 호스트 연락처</strong>
-                        jjsrhee0101@gmail.com<br>
-                        빠른 견적 & 실제 후기 제공
+                        이메일: jjsrhee0101@gmail.com<br>
+                        빠른 견적 & 한국 학생 후기 제공 (과거 참가자 사례 공유)
                     </div>
+                    <p>공식 UCLA Recreation 정보<br>
+                    recreation.ucla.edu/summercamps<br>
+                    youthcamps@recreation.ucla.edu | +1 (310) 206-4000</p>
                 </div>
             </div>
 
             <div class="footer">
-                <div class="footer-logo">🐻 BRUINS FOREVER! 🐻</div>
-                <p>Los Angeles Westwood | 한국인 호스트 Jean 드림</p>
+                <div class="footer-logo">🐻 BRUINS FOREVER!</div>
+                <p>Los Angeles Westwood | 한국인 호스트 Jean 드림<br>안전 · 즐거움 · 성장의 완벽한 UCLA 여름을 함께!</p>
             </div>
         </div>
     </div>
