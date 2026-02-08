@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UCLA 여름 캠프 2026 - 한국 학생 전문 가디언 & 호스트</title>
+    <title>UCLA 여름 캠프 2026 - 한국 학생 전문 가디언 & 호스트 (Stanford 비교 포함)</title>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=Bebas+Neue&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
     <style>
         * { margin:0; padding:0; box-sizing:border-box; }
@@ -86,7 +86,7 @@
         .section-icon { font-size: 48px; animation: bounce 2s infinite; }
         @keyframes bounce { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
 
-        .highlight-box {
+        .highlight-box, .compare-box {
             background: linear-gradient(135deg, #fff9e6 0%, #fffef8 100%);
             border: 4px solid var(--ucla-gold);
             border-radius: 20px;
@@ -95,6 +95,21 @@
             box-shadow: 0 15px 40px rgba(255,209,0,0.25);
             font-size: 18px;
         }
+        .compare-box table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        .compare-box th, .compare-box td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        .compare-box th {
+            background: var(--ucla-blue);
+            color: white;
+        }
+        .compare-box tr:nth-child(even) { background: #f9f9f9; }
 
         .price-grid {
             display: grid;
@@ -174,6 +189,7 @@
             .subtitle { font-size: 28px; }
             h2 { font-size: 30px; }
             .price-amount { font-size: 48px; }
+            .compare-box table { font-size: 14px; }
         }
     </style>
 </head>
@@ -194,7 +210,7 @@
                     월~금 데이 캠프 (8:30AM ~ 4:30PM) | 자세한 그리드는 공식 사이트 PDF 다운로드
                 </div>
 
-                <h2><span class="section-icon">💰</span> 공식 참가비 (Tier 5: 국제 학생)</h2>
+                <h2><span class="section-icon">💰</span> UCLA 공식 참가비 (Tier 5: 국제 학생)</h2>
                 <div class="price-grid">
                     <div class="price-card">
                         <div>Rec Camp 등 일반 프로그램</div>
@@ -208,6 +224,20 @@
                     </div>
                 </div>
                 <p style="text-align:center; color:#555; font-size:16px;">공식 사이트 직접 결제 | 등록비 별도 | Tier 5 기준 (국제 학생 적용)</p>
+
+                <h2><span class="section-icon">🆚</span> UCLA vs Stanford 여름 캠프 비교 (한국 학생 관점)</h2>
+                <div class="compare-box">
+                    <table>
+                        <tr><th>항목</th><th>UCLA (제가 호스트)</th><th>Stanford (Camp Cardinal 등)</th></tr>
+                        <tr><td>위치 & 매력</td><td>LA – 디즈니랜드·유니버설·비치·할리우드 관광 최고!</td><td>실리콘밸리 – 테크/STEM 강점, 조용한 캠퍼스</td></tr>
+                        <tr><td>운영 기간</td><td>6/15 ~ 8/21 (10주)</td><td>6월 초 ~ 8월 말 (약 10주)</td></tr>
+                        <tr><td>가격 (주당 추정)</td><td>$695 ~ $995 (Tier 5 국제)</td><td>$500 ~ $800 (Camp Cardinal), Athletic 별도</td></tr>
+                        <tr><td>주요 활동</td><td>스포츠·예술·필드트립 (디즈니/유니버설 테마 주)</td><td>All-Sports·특정 스포츠 (축구·테니스·골프 등 NCAA 수준)</td></tr>
+                        <tr><td>기숙/국제 지원</td><td>데이 중심 + 제가 풀 숙소·24시간 한국어 케어 제공</td><td>데이 중심 (일부 overnight 서드파티), 국제 지원 제한적</td></tr>
+                        <tr><td>한국 학생 추천 포인트</td><td>LA 재미 + 영어 몰입 + 제 가디언 풀 서비스 → 부모님 최고 안심!</td><td>스포츠/테크 특화 시 강함, 하지만 관광·케어는 UCLA 우위</td></tr>
+                    </table>
+                    <p><strong>결론:</strong> 재미·관광·안전 케어 원하시면 UCLA 강추! Stanford는 특정 스포츠/STEM 관심 시 고려하세요.</p>
+                </div>
 
                 <h2><span class="section-icon">🛡️</span> Jean 가디언 풀 패키지 (한국 학생 특화)</h2>
                 <ul class="features-list">
