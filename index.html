@@ -31,18 +31,18 @@
         .flyer-container::before {
             content: '';
             position: absolute;
-            top: 0; left: 0; right: 0; height: 350px;
+            top: 0; left: 0; right: 0; height: 380px;
             background: linear-gradient(135deg, var(--ucla-blue) 0%, var(--dark-blue) 100%);
             z-index: 0;
         }
         .content-wrapper { position: relative; z-index: 1; }
 
         .header {
-            padding: 80px 40px 50px;
+            padding: 90px 40px 60px;
             text-align: center;
             color: white;
         }
-        .header-logo { font-size: 140px; margin-bottom: -30px; animation: bounce 1.8s infinite; display: block; }
+        .header-logo { font-size: 140px; margin-bottom: -30px; animation: bounce 1.8s infinite; }
         @keyframes bounce { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
         .header h1 {
             font-family: 'Bebas Neue', sans-serif;
@@ -50,33 +50,17 @@
             letter-spacing: 6px;
             text-shadow: 6px 6px 0 rgba(0,0,0,0.4);
             margin-bottom: 15px;
-            animation: glow 2.5s infinite alternate;
         }
-        @keyframes glow {
-            from { text-shadow: 0 0 15px var(--ucla-gold), 0 0 30px var(--ucla-gold); }
-            to { text-shadow: 0 0 40px var(--ucla-gold), 0 0 70px var(--ucla-gold); }
-        }
-        .subtitle { 
-            font-size: 32px; 
-            color: var(--ucla-gold); 
-            font-weight: 900; 
-            margin: 15px 0; 
-            text-shadow: 2px 2px 10px rgba(0,0,0,0.5); 
-            white-space: nowrap; 
-            overflow: hidden; 
-            text-overflow: ellipsis; 
-        }
+        .subtitle { font-size: 32px; color: var(--ucla-gold); font-weight: 900; margin: 15px 0; text-shadow: 2px 2px 10px rgba(0,0,0,0.5); }
         .tagline { 
             font-size: 20px; 
             font-weight: 700; 
-            opacity: 0.98; 
-            margin-top: 15px; 
             line-height: 1.5; 
             white-space: normal; 
             word-break: keep-all; 
         }
 
-        .main-content { padding: 50px; background: white; border-radius: 40px 40px 0 0; margin-top: -100px; position: relative; }
+        .main-content { padding: 50px; background: white; border-radius: 40px 40px 0 0; margin-top: -120px; position: relative; }
 
         h2 {
             font-family: 'Poppins', sans-serif;
@@ -96,6 +80,120 @@
         }
         .section-icon { font-size: 48px; animation: bounce 2s infinite; }
 
+        .highlight-box {
+            background: linear-gradient(135deg, #fff9e6 0%, #fffef8 100%);
+            border: 4px solid var(--ucla-gold);
+            border-radius: 20px;
+            padding: 25px;
+            margin: 25px 0;
+            box-shadow: 0 15px 40px rgba(255,209,0,0.25);
+            font-size: 17px;
+        }
+
+        .activities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+        .activity-card {
+            background: white;
+            border: 3px solid var(--light-blue);
+            border-radius: 16px;
+            padding: 25px;
+            box-shadow: 0 8px 20px rgba(39,116,174,0.15);
+            transition: all 0.3s ease;
+        }
+        .activity-card:hover {
+            border-color: var(--ucla-gold);
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(39,116,174,0.25);
+        }
+        .activity-card h4 { color: var(--ucla-blue); font-size: 22px; margin-bottom: 12px; font-weight: 800; }
+        .activity-card ul { list-style: none; padding-left: 0; font-size: 15px; }
+        .activity-card li { padding: 8px 0 8px 28px; position: relative; }
+        .activity-card li::before { content: '⚡'; position: absolute; left: 0; font-size: 18px; }
+
+        .compare-box {
+            overflow-x: auto;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(39,116,174,0.3);
+            background: white;
+            border: 3px solid var(--ucla-gold);
+        }
+        .compare-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            font-size: 17px;
+        }
+        .compare-table th, .compare-table td {
+            padding: 16px 18px;
+            text-align: left;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        .compare-table th {
+            background: linear-gradient(135deg, var(--ucla-blue) 0%, var(--dark-blue) 100%);
+            color: white;
+            font-weight: 900;
+            font-size: 18px;
+        }
+        .compare-table tr:nth-child(even) { background: rgba(39,116,174,0.05); }
+        .compare-table tr:hover { background: rgba(255,209,0,0.18); transition: all 0.3s; }
+        .ucla-win { color: var(--ucla-gold); font-weight: bold; }
+
+        .price-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+        .price-card {
+            background: white;
+            border: 5px solid var(--ucla-blue);
+            border-radius: 24px;
+            padding: 35px 25px;
+            text-align: center;
+            transition: all 0.4s ease;
+            box-shadow: 0 10px 25px rgba(39,116,174,0.2);
+        }
+        .price-card:hover {
+            transform: translateY(-20px) scale(1.08);
+            box-shadow: 0 25px 50px rgba(39,116,174,0.35);
+            border-color: var(--ucla-gold);
+        }
+        .price-amount {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 60px;
+            color: var(--ucla-blue);
+            margin: 15px 0;
+        }
+
+        .features-list li {
+            padding: 16px 0 16px 50px;
+            font-size: 17px;
+            position: relative;
+        }
+        .features-list li::before {
+            content: '★';
+            position: absolute;
+            left: 12px;
+            color: var(--ucla-gold);
+            font-size: 28px;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, var(--dark-blue) 0%, var(--ucla-blue) 70%);
+            color: white;
+            padding: 80px 40px;
+            text-align: center;
+        }
+        .cta-section h3 {
+            font-size: 48px;
+            color: var(--ucla-gold);
+            margin-bottom: 30px;
+            text-shadow: 3px 3px 15px rgba(0,0,0,0.5);
+        }
         .contact-big {
             font-size: 32px;
             font-weight: 900;
@@ -117,29 +215,7 @@
             padding: 50px 40px;
             font-size: 20px;
         }
-        .footer-logo { font-size: 140px; margin-bottom: 15px; animation: bounce 2.2s infinite; display: block; }
-
-        /* Keep other styles (activities, compare, etc.) from previous – abbreviated here for brevity */
-        .activities-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; margin: 30px 0; }
-        .activity-card { background: white; border: 3px solid var(--light-blue); border-radius: 16px; padding: 25px; box-shadow: 0 8px 20px rgba(39,116,174,0.15); transition: all 0.3s ease; }
-        .activity-card:hover { border-color: var(--ucla-gold); transform: translateY(-8px); box-shadow: 0 15px 35px rgba(39,116,174,0.25); }
-        .activity-card h4 { color: var(--ucla-blue); font-size: 22px; margin-bottom: 12px; font-weight: 800; }
-
-        .compare-box { overflow-x: auto; border-radius: 20px; box-shadow: 0 15px 40px rgba(39,116,174,0.3); background: white; border: 3px solid var(--ucla-gold); }
-        .compare-table { width: 100%; border-collapse: separate; border-spacing: 0; font-size: 17px; }
-        .compare-table th, .compare-table td { padding: 16px 18px; text-align: left; border-bottom: 1px solid #e0e0e0; }
-        .compare-table th { background: linear-gradient(135deg, var(--ucla-blue) 0%, var(--dark-blue) 100%); color: white; font-weight: 900; font-size: 18px; }
-
-        .price-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 30px; margin: 40px 0; }
-        .price-card { background: white; border: 5px solid var(--ucla-blue); border-radius: 24px; padding: 35px 25px; text-align: center; transition: all 0.4s ease; box-shadow: 0 10px 25px rgba(39,116,174,0.2); }
-        .price-card:hover { transform: translateY(-20px) scale(1.08); box-shadow: 0 25px 50px rgba(39,116,174,0.35); border-color: var(--ucla-gold); }
-        .price-amount { font-family: 'Bebas Neue', sans-serif; font-size: 60px; color: var(--ucla-blue); margin: 15px 0; }
-
-        .features-list li { padding: 16px 0 16px 50px; font-size: 17px; position: relative; }
-        .features-list li::before { content: '★'; position: absolute; left: 12px; color: var(--ucla-gold); font-size: 28px; }
-
-        .cta-section { background: linear-gradient(135deg, var(--dark-blue) 0%, var(--ucla-blue) 70%); color: white; padding: 80px 40px; text-align: center; }
-        .cta-section h3 { font-size: 48px; color: var(--ucla-gold); margin-bottom: 30px; text-shadow: 3px 3px 15px rgba(0,0,0,0.5); white-space: nowrap; }
+        .footer-logo { font-size: 140px; margin-bottom: 15px; animation: bounce 2.2s infinite; }
 
         @media (max-width: 768px) {
             .header-logo { font-size: 100px; }
@@ -164,7 +240,96 @@
             </div>
 
             <div class="main-content">
-                <!-- 일정, 가격, 비교, 활동, 가디언 섹션은 이전 버전과 동일하게 유지 (생략) -->
+                <h2><span class="section-icon">📅</span> 2026 공식 일정 (6/15 ~ 8/21)</h2>
+                <div class="highlight-box">
+                    <strong>등록 오픈:</strong> 2026년 2월 10일 정오 (PST) – 선착순 마감!<br>
+                    <strong>인기 주차 추천:</strong> Week 4, Week 5, Week 7 등<br>
+                    월~금 데이 캠프 (8:30AM ~ 4:30PM)
+                </div>
+
+                <h2><span class="section-icon">💰</span> UCLA 공식 참가비 (Tier 5: 국제 학생)</h2>
+                <div class="price-grid">
+                    <div class="price-card">
+                        <div>Rec Camp 등 일반 프로그램</div>
+                        <div class="price-amount">$695 ~ $795</div>
+                        <div>주당</div>
+                    </div>
+                    <div class="price-card">
+                        <div>Voyager / Discover 등 특화</div>
+                        <div class="price-amount">$895 ~ $995</div>
+                        <div>주당 (필드트립 포함)</div>
+                    </div>
+                </div>
+                <p style="text-align:center; color:#555; font-size:15px;">공식 사이트 직접 결제 | Tier 5 기준</p>
+
+                <h2><span class="section-icon">🆚</span> UCLA vs Stanford 비교 (한국 학생 관점)</h2>
+                <div class="compare-box">
+                    <table class="compare-table">
+                        <tr><th>항목</th><th>UCLA (제가 호스트 🐻)</th><th>Stanford (🅲)</th></tr>
+                        <tr><td>위치 & 매력</td><td class="ucla-win">LA – 디즈니·유니버설·비치 관광 최고!</td><td>실리콘밸리 – 테크/STEM 강점</td></tr>
+                        <tr><td>운영 기간</td><td>6/15 ~ 8/21 (10주)</td><td>6월 초 ~ 8월 말</td></tr>
+                        <tr><td>가격 (주당)</td><td>$695 ~ $995</td><td>$500 ~ $800 (대부분)</td></tr>
+                        <tr><td>기숙/케어</td><td class="ucla-win">제가 풀 숙소·24시간 한국어 케어 제공</td><td>데이 중심, 제한적</td></tr>
+                        <tr><td>추천 포인트</td><td class="ucla-win">LA 재미 + 안전 + 영어 몰입</td><td>특정 스포츠/테크 관심 시</td></tr>
+                    </table>
+                    <p style="padding:15px; text-align:center; font-weight:bold;">
+                        재미·관광·안전 케어 원하시면 <span style="color:var(--ucla-gold);">UCLA 강추</span>!
+                    </p>
+                </div>
+
+                <h2><span class="section-icon">🎯</span> UCLA 캠프 상세 활동 안내</h2>
+                <div class="activities-grid">
+                    <div class="activity-card">
+                        <h4>Rec Camp (5~10세)</h4>
+                        <ul>
+                            <li>미술 & 공예 활동 (매일 창의 프로젝트)</li>
+                            <li>비경쟁 스포츠 & 팀 게임</li>
+                            <li>과학 기반 놀이 & 간단 실험</li>
+                            <li>레크리에이션 수영 (놀이 중심)</li>
+                            <li>음악, 스토리텔링, 야외 탐험</li>
+                        </ul>
+                    </div>
+                    <div class="activity-card">
+                        <h4>Discover (8~10세)</h4>
+                        <ul>
+                            <li>레크리에이션 수영</li>
+                            <li>로프 & 팀 챌린지 코스</li>
+                            <li>필드 게임 & 스포츠</li>
+                            <li>암벽 등반 (실내 월)</li>
+                            <li>미술 & 공예</li>
+                            <li>주간 필드트립 (주제별 외부 체험)</li>
+                        </ul>
+                    </div>
+                    <div class="activity-card">
+                        <h4>Bruins on Water (7~10세)</h4>
+                        <ul>
+                            <li>세일링, 카약, 스탠드업 패들보드 기초</li>
+                            <li>태평양 바다 과학 실험 & 학습</li>
+                            <li>바다 테마 아트 프로젝트</li>
+                            <li>육상 보조 수업 + 수상 놀이</li>
+                        </ul>
+                    </div>
+                    <div class="activity-card">
+                        <h4>Voyager (11~15세)</h4>
+                        <ul>
+                            <li>암벽 등반 (UCLA 실내 월)</li>
+                            <li>레크리에이션 수영 & 필드 게임</li>
+                            <li>Marina Aquatic Center 2회: 세일링·카약·패들보드</li>
+                            <li>주 2회 필드트립 (LA 명소·테마파크 등)</li>
+                            <li>수영 테스트 필요 (25야드 + 1분 물트레드)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h2><span class="section-icon">🛡️</span> Jean 가디언 풀 패키지</h2>
+                <ul class="features-list">
+                    <li>LAX 공항 픽업 & 안전 이동</li>
+                    <li>24시간 한국어 상담 + 부모님 실시간 보고</li>
+                    <li><strong>숙소 선택:</strong> UCLA 근처 숙소 or 제가 호스트하는 풀 기숙 스타일 (추가 요금)</li>
+                    <li>주말 LA 투어 (산타모니카, 할리우드, 코리아타운 등)</li>
+                    <li>캠프 매일 체크인 + 영어·문화 적응 지원</li>
+                    <li>응급·의료 + 여행 보험 조율</li>
+                </ul>
 
                 <div class="cta-section">
                     <h3>지금 문의하세요! 자리 급합니다!</h3>
